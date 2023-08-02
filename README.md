@@ -9,7 +9,7 @@ WARNING: Console code page (437) differs from Windows code page (1252)
          page "Notes for Windows users" for details.
 Type "help" for help.
 
-postgres=# CREATE DATABASE todo;
+postgres=# CREATE DATABASE movie;
 CREATE DATABASE
 postgres=# CREATE USER movie_user WITH ENCRYPTED PASSWORD '<>';
 CREATE ROLE
