@@ -1,4 +1,10 @@
-﻿# movie-backend
+﻿# movie-backend5
+
+## Get the api key 
+Register to https://www.omdbapi.com/ by providing the email address.
+The api key will be shared in the email. Email needs to be verified for api key usage.
+The same api key should be used in the backend development.
+
  ## Setup for PostgresSQL
  ```
  C:\Users\suhasini>psql -U postgres
