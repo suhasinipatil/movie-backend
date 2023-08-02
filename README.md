@@ -11,9 +11,9 @@ Type "help" for help.
 
 postgres=# CREATE DATABASE todo;
 CREATE DATABASE
-postgres=# CREATE USER todo_user WITH ENCRYPTED PASSWORD '<>';
+postgres=# CREATE USER movie_user WITH ENCRYPTED PASSWORD '<>';
 CREATE ROLE
-postgres=# GRANT ALL PRIVILEGES ON DATABASE todo TO todo_user;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE todo TO movie_user;
 GRANT
 postgres=# \q
 ```
