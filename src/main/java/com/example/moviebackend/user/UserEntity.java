@@ -3,9 +3,9 @@ package com.example.moviebackend.user;
 
 import com.example.moviebackend.common.BaseEntity;
 import com.example.moviebackend.movie.MovieEntity;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +19,11 @@ public class UserEntity extends BaseEntity {
     String username;
     String password;
 
-    @ManyToMany(mappedBy = "lstUser")
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "movie_likes",
+            joinColumns = @javax.persistence.JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @javax.persistence.JoinColumn(name = "user_id")
+    )
     List<MovieEntity> lstMovie;
 }

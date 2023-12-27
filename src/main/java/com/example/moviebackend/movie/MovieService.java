@@ -1,8 +1,7 @@
 package com.example.moviebackend.movie;
 
 import com.example.moviebackend.movie.dto.FavouriteMovieDTO;
-import com.example.moviebackend.user.UserEntity;
-import com.example.moviebackend.user.UserRepository;
+import com.example.moviebackend.movie.dto.ResponseMovieDTO;
 import com.example.moviebackend.user.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpEntity;
@@ -28,25 +27,24 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
 
-    private final UserRepository userRepository;
     private final HttpClient client = HttpClients.createDefault();
+    private final UserService userService;
 
-    public MovieService(ModelMapper modelMapper, MovieRepository movieRepository, UserRepository userRepository) {
+    public MovieService(ModelMapper modelMapper, MovieRepository movieRepository, UserService userService){
         this.modelMapper = modelMapper;
         this.movieRepository = movieRepository;
-        this.userRepository = userRepository;
+        this.userService = userService;
     }
 
-    public MovieEntity getMovie(String title) {
+    public ResponseMovieDTO getMovie(String title){
         String url = API_URL + "&t=" + title;
 
         HttpGet request = httpGet(url);
-        try{
+        try {
             HttpResponse response = client.execute(request);
             HttpEntity entity = response.getEntity();
             String responseString = EntityUtils.toString(entity, "UTF-8");
-            ///System.out.println(responseString);
-            return objectMapper.readValue(responseString, MovieEntity.class);
+            return objectMapper.readValue(responseString, ResponseMovieDTO.class, );
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -55,11 +53,11 @@ public class MovieService {
         }
     }
 
-    public List<SimilarMovieEntity> getSimilarMovies(String title, String genre, String type) {
+    public List<SimilarMovieEntity> getSimilarMovies(String title, String genre, String type){
         String url = API_URL + "&s=" + title + "&type=" + type + "&genre=" + genre;
 
         HttpGet request = httpGet(url);
-        try{
+        try {
             HttpResponse response = client.execute(request);
             HttpEntity entity = response.getEntity();
             String responseString = EntityUtils.toString(entity, "UTF-8");
@@ -74,37 +72,38 @@ public class MovieService {
         }
     }
 
-    //public Fa
-    private HttpGet httpGet(String url) {
+    private HttpGet httpGet(String url){
         return new HttpGet(url);
     }
 
-    public FavouriteMovieDTO saveFavoriteMovie(FavouriteMovieDTO favouriteMovieDTO){
+    public FavouriteMovieDTO saveFavouriteMovie(FavouriteMovieDTO favouriteMovieDTO){
+        var user = userService.findByUsername(favouriteMovieDTO.getUsername());
+        if(user == null){
+            throw new UserService.UserNotFoundException(favouriteMovieDTO.getUsername());
+        }
+
         MovieEntity toBeSavedMovie = modelMapper.map(favouriteMovieDTO, MovieEntity.class);
         MovieEntity savedMovie = movieRepository.save(toBeSavedMovie);
+
+        user.getLstMovie().add(savedMovie);
+        userService.save(user);
+
         return modelMapper.map(savedMovie, FavouriteMovieDTO.class);
     }
 
-    public List<FavouriteMovieDTO> getAllFavoriteMovies(String username){
-        var user = userRepository.findByUsername(username);
+
+    public List<FavouriteMovieDTO> getFavouriteMovie(String username){
+        var user = userService.findByUsername(username);
         if(user == null){
             throw new UserService.UserNotFoundException(username);
         }
-        var lstMovies = movieRepository.findAllByUsername(user.getId());
-        if(lstMovies.isPresent()){
-            List<FavouriteMovieDTO> favouriteMovieDTOList = new ArrayList<>();
-            for (MovieEntity movie: lstMovies.get())
-            {
-                favouriteMovieDTOList.add(modelMapper.map(movie, FavouriteMovieDTO.class));
-            }
-            return favouriteMovieDTOList;
+
+        List<MovieEntity> lstMovies = user.getLstMovie();
+        List<FavouriteMovieDTO> favouriteMovieDTOList = new ArrayList<>();
+        for(MovieEntity movie : lstMovies){
+            favouriteMovieDTOList.add(modelMapper.map(movie, FavouriteMovieDTO.class));
         }
-        throw new NoFavoriteMovieException(username);
+        return favouriteMovieDTOList;
     }
 
-    public static class NoFavoriteMovieException extends IllegalArgumentException{
-        public NoFavoriteMovieException(String username) {
-            super("No Favorite movie for user " + username);
-        }
-    }
 }

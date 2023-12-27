@@ -3,8 +3,12 @@ package com.example.moviebackend.user;
 import com.example.moviebackend.user.dto.CreateUserDTO;
 import com.example.moviebackend.user.dto.UserResponseDTO;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 @Service
 public class UserService {
@@ -43,6 +47,20 @@ public class UserService {
         var userResponseDTO = modelMapper.map(userEntity, UserResponseDTO.class);
 
         return userResponseDTO;
+    }
+
+    // find user by username
+    public UserEntity findByUsername(String username){
+        var userEntity = userRepository.findByUsername(username);
+        if(userEntity == null){
+            throw new UserNotFoundException(username);
+        }
+        return userEntity;
+    }
+
+    public UserEntity save(UserEntity user) {
+        UserEntity savedUser = userRepository.saveAndFlush(user);
+        return savedUser;
     }
 
     public static class UserNotFoundException extends IllegalArgumentException{
