@@ -12,6 +12,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class MovieService {
             HttpResponse response = client.execute(request);
             HttpEntity entity = response.getEntity();
             String responseString = EntityUtils.toString(entity, "UTF-8");
-            return objectMapper.readValue(responseString, ResponseMovieDTO.class, );
+            return objectMapper.readValue(responseString, ResponseMovieDTO.class);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -76,7 +77,7 @@ public class MovieService {
         return new HttpGet(url);
     }
 
-    public FavouriteMovieDTO saveFavouriteMovie(FavouriteMovieDTO favouriteMovieDTO){
+    public ResponseMovieDTO saveFavouriteMovie(FavouriteMovieDTO favouriteMovieDTO){
         var user = userService.findByUsername(favouriteMovieDTO.getUsername());
         if(user == null){
             throw new UserService.UserNotFoundException(favouriteMovieDTO.getUsername());
@@ -88,22 +89,40 @@ public class MovieService {
         user.getLstMovie().add(savedMovie);
         userService.save(user);
 
-        return modelMapper.map(savedMovie, FavouriteMovieDTO.class);
+        return modelMapper.map(savedMovie, ResponseMovieDTO.class);
     }
 
 
-    public List<FavouriteMovieDTO> getFavouriteMovie(String username){
+    public List<ResponseMovieDTO> getFavouriteMovie(String username){
         var user = userService.findByUsername(username);
         if(user == null){
             throw new UserService.UserNotFoundException(username);
         }
 
         List<MovieEntity> lstMovies = user.getLstMovie();
-        List<FavouriteMovieDTO> favouriteMovieDTOList = new ArrayList<>();
+        List<ResponseMovieDTO> responseMovieDTOList = new ArrayList<>();
         for(MovieEntity movie : lstMovies){
-            favouriteMovieDTOList.add(modelMapper.map(movie, FavouriteMovieDTO.class));
+            responseMovieDTOList.add(modelMapper.map(movie, ResponseMovieDTO.class));
         }
-        return favouriteMovieDTOList;
+        return responseMovieDTOList;
+    }
+
+    public FavouriteMovieDTO deleteFavouriteMovie(String username, String imdbID){
+        var user = userService.findByUsername(username);
+        if(user == null){
+            throw new UserService.UserNotFoundException(username);
+        }
+
+        List<MovieEntity> lstMovies = user.getLstMovie();
+        for(MovieEntity movie : lstMovies){
+            if(movie.getImdbID().equals(imdbID)){
+                lstMovies.remove(movie);
+                break;
+            }
+        }
+        user.setLstMovie(lstMovies);
+        userService.save(user);
+        return modelMapper.map(user, FavouriteMovieDTO.class);
     }
 
 }

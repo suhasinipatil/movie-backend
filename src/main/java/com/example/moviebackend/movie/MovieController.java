@@ -32,15 +32,22 @@ public class MovieController {
 
     //save favourite movie
     @PostMapping("/favourite")
-    public ResponseEntity<FavouriteMovieDTO> saveFavouriteMovie(@RequestBody FavouriteMovieDTO favouriteMovieDTO){
+    public ResponseEntity<ResponseMovieDTO> saveFavouriteMovie(@RequestBody FavouriteMovieDTO favouriteMovieDTO){
         var savedMovie = movieService.saveFavouriteMovie(favouriteMovieDTO);
         return ResponseEntity.ok(savedMovie);
     }
 
     //get favourite movie
     @GetMapping("/favourite/{username}")
-    public ResponseEntity<List<FavouriteMovieDTO>> getFavouriteMovie(@PathVariable String username){
+    public ResponseEntity<List<ResponseMovieDTO>> getFavouriteMovie(@PathVariable String username){
         var savedMovie = movieService.getFavouriteMovie(username);
+        return ResponseEntity.ok(savedMovie);
+    }
+
+    //delete favourite movie
+    @DeleteMapping("/favourite/{username}/{imdbID}")
+    public ResponseEntity<FavouriteMovieDTO> deleteFavouriteMovie(@PathVariable String username, @PathVariable String imdbID){
+        var savedMovie = movieService.deleteFavouriteMovie(username, imdbID);
         return ResponseEntity.ok(savedMovie);
     }
 }

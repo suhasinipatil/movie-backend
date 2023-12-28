@@ -26,12 +26,6 @@ public class MovieEntity extends BaseEntity {
     String releasedDate;
     @JsonProperty("imdbRating")
     Double rating;
-/*
-    @ManyToMany
-            @JoinTable(
-                    name = "movie_likes",
-                    joinColumns = @javax.persistence.JoinColumn(name = "movie_id"),
-                    inverseJoinColumns = @javax.persistence.JoinColumn(name = "user_id")
-            )
-    List<UserEntity> lstUser;*/
+    @JsonProperty("imdbID")
+    String imdbID;
 }
