@@ -86,6 +86,9 @@ public class MovieService {
         MovieEntity toBeSavedMovie = modelMapper.map(favouriteMovieDTO, MovieEntity.class);
         MovieEntity savedMovie = movieRepository.save(toBeSavedMovie);
 
+        if(user.getLstMovie() == null){
+            user.setLstMovie(new ArrayList<>());
+        }
         user.getLstMovie().add(savedMovie);
         userService.save(user);
 
