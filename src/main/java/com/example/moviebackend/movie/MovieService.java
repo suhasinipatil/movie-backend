@@ -17,6 +17,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service class for managing movies.
+ */
 @Service
 public class MovieService {
 
@@ -31,12 +34,26 @@ public class MovieService {
     private final HttpClient client = HttpClients.createDefault();
     private final UserService userService;
 
+
+    /**
+     * Constructor for MovieService.
+     *
+     * @param modelMapper     The ModelMapper instance for mapping between DTOs and entities.
+     * @param movieRepository The repository for accessing movie data.
+     * @param userService     The service for managing users.
+     */
     public MovieService(ModelMapper modelMapper, MovieRepository movieRepository, UserService userService){
         this.modelMapper = modelMapper;
         this.movieRepository = movieRepository;
         this.userService = userService;
     }
 
+    /**
+     * Retrieves a movie by title.
+     *
+     * @param title The title of the movie.
+     * @return The movie details.
+     */
     public ResponseMovieDTO getMovie(String title){
         String url = API_URL + "&t=" + title;
 
@@ -54,6 +71,14 @@ public class MovieService {
         }
     }
 
+    /**
+     * Retrieves similar movies based on title, genre, and type.
+     *
+     * @param title The title of the movie.
+     * @param genre The genre of the movie.
+     * @param type  The type of the movie.
+     * @return A list of similar movies.
+     */
     public List<SimilarMovieEntity> getSimilarMovies(String title, String genre, String type){
         String url = API_URL + "&s=" + title + "&type=" + type + "&genre=" + genre;
 
@@ -73,10 +98,18 @@ public class MovieService {
         }
     }
 
+
     private HttpGet httpGet(String url){
         return new HttpGet(url);
     }
 
+
+    /**
+     * Saves a favourite movie for a user.
+     *
+     * @param favouriteMovieDTO The favourite movie details.
+     * @return The saved favourite movie details.
+     */
     public ResponseMovieDTO saveFavouriteMovie(FavouriteMovieDTO favouriteMovieDTO){
         var user = userService.findByUsername(favouriteMovieDTO.getUsername());
         if(user == null){
@@ -95,7 +128,12 @@ public class MovieService {
         return modelMapper.map(savedMovie, ResponseMovieDTO.class);
     }
 
-
+    /**
+     * Retrieves all favourite movies for a user.
+     *
+     * @param username The username of the user.
+     * @return A list of the user's favourite movies.
+     */
     public List<ResponseMovieDTO> getFavouriteMovie(String username){
         var user = userService.findByUsername(username);
         if(user == null){
@@ -110,6 +148,13 @@ public class MovieService {
         return responseMovieDTOList;
     }
 
+    /**
+     * Deletes a favourite movie for a user.
+     *
+     * @param username The username of the user.
+     * @param imdbID   The IMDb ID of the movie.
+     * @return The updated favourite movie details.
+     */
     public FavouriteMovieDTO deleteFavouriteMovie(String username, String imdbID){
         var user = userService.findByUsername(username);
         if(user == null){
