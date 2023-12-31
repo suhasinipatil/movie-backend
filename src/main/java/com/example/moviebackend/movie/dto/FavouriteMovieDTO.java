@@ -18,7 +18,7 @@ public class FavouriteMovieDTO {
     @JsonProperty("releasedDate")
     String releasedDate;
     @JsonProperty("imdbRating")
-    String rating;
+    String imdbRating;
     @JsonProperty("imdbID")
     String imdbID;
     @JsonProperty("username")

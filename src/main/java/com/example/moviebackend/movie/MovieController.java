@@ -46,8 +46,8 @@ public class MovieController {
 
     //delete favourite movie
     @DeleteMapping("/favourite/{username}/{imdbID}")
-    public ResponseEntity<FavouriteMovieDTO> deleteFavouriteMovie(@PathVariable String username, @PathVariable String imdbID){
-        var savedMovie = movieService.deleteFavouriteMovie(username, imdbID);
-        return ResponseEntity.ok(savedMovie);
+    public ResponseEntity<String> deleteFavouriteMovie(@PathVariable String username, @PathVariable String imdbID){
+        movieService.deleteFavouriteMovie(username, imdbID);
+        return ResponseEntity.ok().body("Movie deleted successfully");
     }
 }

@@ -25,7 +25,7 @@ public class MovieEntity extends BaseEntity {
     @JsonProperty("Released")
     String releasedDate;
     @JsonProperty("imdbRating")
-    Double rating;
+    Double imdbRating;
     @JsonProperty("imdbID")
     String imdbID;
 }

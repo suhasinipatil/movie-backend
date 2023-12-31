@@ -62,7 +62,8 @@ public class MovieService {
             HttpResponse response = client.execute(request);
             HttpEntity entity = response.getEntity();
             String responseString = EntityUtils.toString(entity, "UTF-8");
-            return objectMapper.readValue(responseString, ResponseMovieDTO.class);
+            var movie = objectMapper.readValue(responseString, ResponseMovieDTO.class);
+            return movie;
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -155,7 +156,7 @@ public class MovieService {
      * @param imdbID   The IMDb ID of the movie.
      * @return The updated favourite movie details.
      */
-    public FavouriteMovieDTO deleteFavouriteMovie(String username, String imdbID){
+    public void deleteFavouriteMovie(String username, String imdbID){
         var user = userService.findByUsername(username);
         if(user == null){
             throw new UserService.UserNotFoundException(username);
@@ -170,7 +171,6 @@ public class MovieService {
         }
         user.setLstMovie(lstMovies);
         userService.save(user);
-        return modelMapper.map(user, FavouriteMovieDTO.class);
     }
 
 }
