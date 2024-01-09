@@ -17,5 +17,7 @@ spring:
 logging:
   level:
     org.springframework.security: DEBUG
+jwt:
+  secret: MovieBackendSecretKey
 
 

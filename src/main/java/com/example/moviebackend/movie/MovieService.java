@@ -3,6 +3,7 @@ package com.example.moviebackend.movie;
 import com.example.moviebackend.movie.dto.FavouriteMovieDTO;
 import com.example.moviebackend.movie.dto.ResponseMovieDTO;
 import com.example.moviebackend.user.UserService;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -48,6 +49,25 @@ public class MovieService {
         this.userService = userService;
     }
 
+    public List<SimilarMovieEntity> searchMovie(String title){
+        String url = API_URL + "&s=" + title;
+
+        HttpGet request = httpGet(url);
+        try {
+            HttpResponse response = client.execute(request);
+            HttpEntity entity = response.getEntity();
+            String responseString = EntityUtils.toString(entity, "UTF-8");
+            System.out.println(responseString);
+            MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
+            return movies.getSearch();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            request.releaseConnection();
+        }
+    }
+
     /**
      * Retrieves a movie by title.
      *
@@ -75,29 +95,36 @@ public class MovieService {
     /**
      * Retrieves similar movies based on title, genre, and type.
      *
-     * @param title The title of the movie.
-     * @param genre The genre of the movie.
-     * @param type  The type of the movie.
+     * @param title The title of the movie
      * @return A list of similar movies.
      */
-    public List<SimilarMovieEntity> getSimilarMovies(String title, String genre, String type){
-        String url = API_URL + "&s=" + title + "&type=" + type + "&genre=" + genre;
+  public List<SimilarMovieEntity> getSimilarMovies(String title){
+    String url = API_URL + "&s=" + title;
 
-        HttpGet request = httpGet(url);
-        try {
-            HttpResponse response = client.execute(request);
-            HttpEntity entity = response.getEntity();
-            String responseString = EntityUtils.toString(entity, "UTF-8");
-            System.out.println(responseString);
-            MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
-            return movies.getSearch();
+    HttpGet request = httpGet(url);
+    try {
+        HttpResponse response = client.execute(request);
+        HttpEntity entity = response.getEntity();
+        String responseString = EntityUtils.toString(entity, "UTF-8");
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            request.releaseConnection();
+        // Parse the JSON response into a JsonNode
+        JsonNode jsonNode = objectMapper.readTree(responseString);
+
+        // Check if the "Response" field is "False"
+        if (jsonNode.has("Response") && jsonNode.get("Response").asText().equals("False")) {
+            // If the movie is not found, throw an exception or return an empty list
+            throw new RuntimeException("Movie not found");
         }
+
+        MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
+        return movies.getSearch();
+
+    } catch (Exception e) {
+        throw new RuntimeException(e.getMessage());
+    } finally {
+        request.releaseConnection();
     }
+}
 
 
     private HttpGet httpGet(String url){

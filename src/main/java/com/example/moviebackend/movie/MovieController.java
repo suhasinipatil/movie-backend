@@ -1,7 +1,9 @@
 package com.example.moviebackend.movie;
 
+import com.example.moviebackend.common.dto.ErrorMessage;
 import com.example.moviebackend.movie.dto.FavouriteMovieDTO;
 import com.example.moviebackend.movie.dto.ResponseMovieDTO;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +27,8 @@ public class MovieController {
     }
 
     @GetMapping("/{title}/similar")
-    public ResponseEntity<List<SimilarMovieEntity>> getSimilarMovies(@PathVariable String title, @RequestParam String genre, @RequestParam String type){
-        var searchedMovie = movieService.getSimilarMovies(title, genre, type);
+    public ResponseEntity<List<SimilarMovieEntity>> getSimilarMovies(@PathVariable String title){
+        var searchedMovie = movieService.getSimilarMovies(title);
         return ResponseEntity.ok(searchedMovie);
     }
 
@@ -49,5 +51,16 @@ public class MovieController {
     public ResponseEntity<String> deleteFavouriteMovie(@PathVariable String username, @PathVariable String imdbID){
         movieService.deleteFavouriteMovie(username, imdbID);
         return ResponseEntity.ok().body("Movie deleted successfully");
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ErrorMessage> handleRuntimeException(RuntimeException e) {
+        // Log the exception (optional)
+        // logger.error("Unexpected error", e);
+
+        // Return a ResponseEntity with a custom error message and HTTP status code
+        var errorMessage = new ErrorMessage();
+        errorMessage.setMessage(e.getLocalizedMessage());
+        return new ResponseEntity<>(errorMessage, HttpStatus.NOT_FOUND);
     }
 }
