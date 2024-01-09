@@ -1,12 +1,18 @@
 package com.example.moviebackend.security;
 
 import com.example.moviebackend.security.jwt.JWTAuthenticationFilter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.AnonymousAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
 
 /**
  * This class is responsible for the security configuration of the application.
@@ -27,22 +33,29 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // Disable CSRF (Cross Site Request Forgery)
-        http.csrf().disable();
-
-        // Only allow certain requests to be authorized
-        http.authorizeRequests()
+        http.cors().and() // add this line to enable cors
+                .csrf().disable()
+                .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/users/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/users/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/movies/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/movies/**").permitAll()
                 .antMatchers(HttpMethod.DELETE,"/movies/**" ).permitAll()
                 .antMatchers("/error").permitAll()
-                .anyRequest().authenticated();
+                .anyRequest().authenticated()
+                .and()
+                .addFilterBefore(new JWTAuthenticationFilter(), AnonymousAuthenticationFilter.class)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
 
-        // Add JWTAuthenticationFilter to the security filter chain
-        http.addFilterBefore(new JWTAuthenticationFilter(), AnonymousAuthenticationFilter.class);
-
-        // Ensure the server is stateless
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("*")); // Allow all origins or customize as per your need
+        configuration.setAllowedMethods(Arrays.asList("GET","POST", "PUT", "DELETE")); // Allow specific http methods, for instance GET, POST, etc.
+        configuration.setAllowedHeaders(Arrays.asList("*")); // Allow all headers or you can specify what headers are allowed
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 }
