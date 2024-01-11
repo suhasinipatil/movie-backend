@@ -29,6 +29,7 @@ public class MovieController {
     @GetMapping("/{title}/similar")
     public ResponseEntity<List<SimilarMovieEntity>> getSimilarMovies(@PathVariable String title){
         var searchedMovie = movieService.getSimilarMovies(title);
+        //var searchedMovie1 = movieService.getMoviesList(title);
         return ResponseEntity.ok(searchedMovie);
     }
 

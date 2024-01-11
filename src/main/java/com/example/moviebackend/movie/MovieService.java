@@ -57,7 +57,7 @@ public class MovieService {
             HttpResponse response = client.execute(request);
             HttpEntity entity = response.getEntity();
             String responseString = EntityUtils.toString(entity, "UTF-8");
-            System.out.println(responseString);
+            //System.out.println(responseString);
             MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
             return movies.getSearch();
 
@@ -98,35 +98,71 @@ public class MovieService {
      * @param title The title of the movie
      * @return A list of similar movies.
      */
-  public List<SimilarMovieEntity> getSimilarMovies(String title){
-    String url = API_URL + "&s=" + title;
+     public List<SimilarMovieEntity> getSimilarMovies(String title){
+        List<SimilarMovieEntity> allMovies = new ArrayList<>();
+        int page = 1;
 
-    HttpGet request = httpGet(url);
-    try {
-        HttpResponse response = client.execute(request);
-        HttpEntity entity = response.getEntity();
-        String responseString = EntityUtils.toString(entity, "UTF-8");
+        while (true) {
+            String url = API_URL + "&s=" + title + "&page=" + page;
 
-        // Parse the JSON response into a JsonNode
-        JsonNode jsonNode = objectMapper.readTree(responseString);
+            HttpGet request = httpGet(url);
+            try {
+                HttpResponse response = client.execute(request);
+                HttpEntity entity = response.getEntity();
+                String responseString = EntityUtils.toString(entity, "UTF-8");
+                MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
 
-        // Check if the "Response" field is "False"
-        if (jsonNode.has("Response") && jsonNode.get("Response").asText().equals("False")) {
-            // If the movie is not found, throw an exception or return an empty list
-            throw new RuntimeException("Movie not found");
+                allMovies.addAll(movies.getSearch());
+
+                // If the total results is more than the size of the search list, increment the page number and continue fetching
+                if (Integer.parseInt(movies.getTotalResults()) > allMovies.size()) {
+                    page++;
+                } else {
+                    break;
+                }
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            } finally {
+                request.releaseConnection();
+            }
         }
 
-        MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
-        return movies.getSearch();
-
-    } catch (Exception e) {
-        throw new RuntimeException(e.getMessage());
-    } finally {
-        request.releaseConnection();
+        return allMovies;
     }
-}
 
+    public List<MovieEntity> getMoviesList(String title){
+        List<SimilarMovieEntity> similarMovies = getSimilarMovies(title);
+        List<MovieEntity> movies = new ArrayList<>();
 
+        for(SimilarMovieEntity movie : similarMovies){
+            String imdbID = movie.getImdbID();
+            String url = API_URL + "&i=" + imdbID;
+
+            HttpGet request = httpGet(url);
+            try {
+                HttpResponse response = client.execute(request);
+                HttpEntity entity = response.getEntity();
+                String responseString = EntityUtils.toString(entity, "UTF-8");
+                var movieEntity = objectMapper.readValue(responseString, MovieEntity.class);
+                movies.add(movieEntity);
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            } finally {
+                request.releaseConnection();
+            }
+        }
+
+        return movies;
+    }
+    
+    /**
+     * Creates a new HttpGet request.
+     *
+     * @param url The URL for the request.
+     * @return The HttpGet request.
+     */
     private HttpGet httpGet(String url){
         return new HttpGet(url);
     }
