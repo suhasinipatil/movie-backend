@@ -181,7 +181,6 @@ public class MovieService {
      *
      * @param username The username of the user.
      * @param imdbID   The IMDb ID of the movie.
-     * @return The updated favourite movie details.
      */
     public void deleteFavouriteMovie(String username, String imdbID){
         var user = userService.findByUsername(username);
