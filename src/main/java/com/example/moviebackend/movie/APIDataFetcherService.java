@@ -1,5 +1,7 @@
 package com.example.moviebackend.movie;
 
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.concurrent.TimeUnit;
  * This class is responsible for fetching movie data from an API and saving it to a database.
  * It uses a ScheduledExecutorService to schedule tasks that fetch the data at fixed intervals.
  */
+
+@Service
 public class APIDataFetcherService {
 
     private final MovieService movieService;

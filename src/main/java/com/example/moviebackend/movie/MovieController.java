@@ -5,6 +5,7 @@ import com.example.moviebackend.movie.dto.FavouriteMovieDTO;
 import com.example.moviebackend.movie.dto.ResponseMovieDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,17 +27,23 @@ public class MovieController {
         return ResponseEntity.ok(searchedMovie);
     }
 
+
+    @GetMapping("/fetch")
+    public ResponseEntity<Void> fetchMovieData() {
+        movieService.fetchMovieData();
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping("/{title}/similar")
     public ResponseEntity<List<SimilarMovieEntity>> getSimilarMovies(@PathVariable String title){
         var searchedMovie = movieService.getSimilarMovies(title);
-        //var searchedMovie1 = movieService.getMoviesList(title);
         return ResponseEntity.ok(searchedMovie);
     }
 
     //save favourite movie
-    @PostMapping("/favourite")
-    public ResponseEntity<ResponseMovieDTO> saveFavouriteMovie(@RequestBody FavouriteMovieDTO favouriteMovieDTO){
-        var savedMovie = movieService.saveFavouriteMovie(favouriteMovieDTO);
+    @PostMapping("/favourite/{imdbID}")
+    public ResponseEntity<ResponseMovieDTO> saveFavouriteMovie(@PathVariable String imdbID, @AuthenticationPrincipal String username){
+        var savedMovie = movieService.saveFavouriteMovie(imdbID, username);
         return ResponseEntity.ok(savedMovie);
     }
 

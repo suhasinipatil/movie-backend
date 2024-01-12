@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface MovieRepository extends JpaRepository<MovieEntity, Integer> {
 
-    //@Query("select m from movies m where m.id in (select ml.movie_id from movie_likes ml where ml.user_id = :userid)")
-    //Optional<List<MovieEntity>> findAllByUsername(@Param("userid") Integer userid);
+    @Query("SELECT m FROM movies m WHERE m.imdbID = :imdbID")
+    Optional<MovieEntity> findByImdbID(@Param("imdbID") String imdbID);
 
 }

@@ -1,5 +1,6 @@
 package com.example.moviebackend;
 
+import com.example.moviebackend.movie.APIDataFetcherService;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
