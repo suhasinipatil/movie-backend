@@ -156,7 +156,7 @@ public class MovieService {
 
         return movies;
     }
-    
+
     /**
      * Creates a new HttpGet request.
      *
@@ -167,6 +167,9 @@ public class MovieService {
         return new HttpGet(url);
     }
 
+    public void saveMovie(MovieEntity movieEntity){
+        movieRepository.save(movieEntity);
+    }
 
     /**
      * Saves a favourite movie for a user.

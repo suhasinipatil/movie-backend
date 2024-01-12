@@ -1,38 +1,93 @@
 package com.example.moviebackend.movie;
 
-import com.example.moviebackend.movie.dto.FavouriteMovieDTO;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This class is responsible for fetching movie data from an API and saving it to a database.
+ * It uses a ScheduledExecutorService to schedule tasks that fetch the data at fixed intervals.
+ */
 public class APIDataFetcherService {
 
     private final MovieService movieService;
 
+    /**
+     * Constructs a new APIDataFetcherService with the given MovieService.
+     *
+     * @param movieService the MovieService to use for fetching and saving movie data
+     */
     public APIDataFetcherService(MovieService movieService) {
         this.movieService = movieService;
     }
 
-    public void startFetching() {
+    /**
+     * Starts fetching movie data from an API using the given permutations.
+     * The data is fetched at fixed intervals using a ScheduledExecutorService.
+     *
+     * @param permutations the permutations to use for fetching the data
+     */
+    public void startFetching(List<String> permutations){
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+
+        // Create an iterator for the permutations list
+        Iterator<String> iterator = permutations.iterator();
 
         Runnable task = () -> {
             try {
-                // Fetch data from API
-                List<SimilarMovieEntity> movies = movieService.searchMovie("gam");
-
-                // Add data to database
-               /* for (SimilarMovieEntity movie : movies) {
-                    movieService.saveFavouriteMovie(new FavouriteMovieDTO(movie.getTitle(), "username"));
-                }*/
+                // Check if there is a next permutation
+                if(iterator.hasNext()){
+                    // Fetch data from API using the next permutation
+                    List<MovieEntity> movies = movieService.getMoviesList(iterator.next());
+                    // Add data to database
+                    for(MovieEntity movie : movies){
+                        //check if the movie already exists in the database
+                        if(movieService.getMovie(movie.getImdbID()) != null){
+                            continue;
+                        }
+                        movieService.saveMovie(movie);
+                    }
+                } else {
+                    // If there are no more permutations, stop the executor
+                    executorService.shutdown();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         };
 
-        // Schedule the task to run every 10 seconds
-       // executorService.scheduleAtFixedRate(task, 0, 10, TimeUnit.SECONDS);
+        // Schedule the task to run every 10 minutes
+        executorService.scheduleWithFixedDelay(task, 0, 10, TimeUnit.MINUTES);
+    }
+
+    /**
+     * Generates all possible permutations of a given length using the English alphabet.
+     *
+     * @return a list of all possible permutations
+     */
+    public List<String> generatePermutations(){
+        int totalCharacters = 26; // 26 letters
+        int wordLength = 3;
+        List<String> permutations = new ArrayList<>();
+
+        // Generate all possible permutations
+        for(int i = 0; i < Math.pow(totalCharacters, wordLength); i++){
+            StringBuilder permutation = new StringBuilder();
+            int temp = i;
+
+            // Construct the permutation by converting the number to base 'totalCharacters'
+            for(int j = 0; j < wordLength; j++){
+                char character = (char) ('a' + temp % totalCharacters);
+                permutation.insert(0, character);
+                temp /= totalCharacters;
+            }
+
+            permutations.add(permutation.toString());
+        }
+
+        return permutations;
     }
 }
