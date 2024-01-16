@@ -14,4 +14,8 @@ public interface MovieRepository extends JpaRepository<MovieEntity, Integer> {
     @Query("SELECT m FROM movies m WHERE m.imdbID = :imdbID")
     Optional<MovieEntity> findByImdbID(@Param("imdbID") String imdbID);
 
+    //find movie by keyword
+    @Query("SELECT m FROM movies m WHERE m.title LIKE %:keyword%")
+    List<MovieEntity> findByKeyword(@Param("keyword") String keyword);
+
 }

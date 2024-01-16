@@ -1,5 +1,6 @@
 package com.example.moviebackend.movie;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 /**
  * This class is responsible for fetching movie data from an API and saving it to a database.
@@ -17,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class APIDataFetcherService {
 
+    private static final Logger logger = Logger.getLogger(APIDataFetcherService.class.getName());
     private final MovieService movieService;
 
     /**
@@ -31,10 +34,11 @@ public class APIDataFetcherService {
     /**
      * Starts fetching movie data from an API using the given permutations.
      * The data is fetched at fixed intervals using a ScheduledExecutorService.
-     *
-     * @param permutations the permutations to use for fetching the data
+     * The data is saved to a database using the MovieService.
      */
-    public void startFetching(List<String> permutations){
+    @Scheduled(fixedRateString = "${fetch.interval}")
+    public void startFetching(){
+        List<String> permutations = generatePermutations();
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
         // Create an iterator for the permutations list

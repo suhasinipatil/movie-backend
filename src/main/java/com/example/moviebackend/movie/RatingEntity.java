@@ -21,7 +21,7 @@ public class RatingEntity extends BaseEntity {
     @JsonProperty("Value")
     private String value;
 
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name = "movie_id", referencedColumnName = "imdbID")
-    private MovieEntity movie;
+    private MovieEntity movie;*/
 }

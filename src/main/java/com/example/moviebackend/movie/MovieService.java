@@ -145,6 +145,10 @@ public class MovieService {
         startFetching(permutations);
     }
 
+    public List<MovieEntity> getAllMovies(String keyword){
+        return movieRepository.findByKeyword(keyword);
+    }
+
     public List<SimilarMovieEntity> searchMovie(String title){
         String url = API_URL + "&s=" + title;
 
@@ -236,6 +240,20 @@ public class MovieService {
         return allMovies;
     }
 
+    public String convertRuntime(String runtime){
+        // Remove non-digit characters from the runtime string
+        String digits = runtime.replaceAll("\\D+", "");
+        int minutes = Integer.parseInt(digits);
+
+        if(minutes < 60){
+            return minutes + "min";
+        } else {
+            int hours = minutes / 60;
+            int remainingMinutes = minutes % 60;
+            return hours + "h " + remainingMinutes + "min";
+        }
+    }
+
     public List<MovieEntity> getMoviesList(String title){
         List<SimilarMovieEntity> similarMovies = getSimilarMovies(title);
         List<MovieEntity> movies = new ArrayList<>();
@@ -250,6 +268,9 @@ public class MovieService {
                 HttpEntity entity = response.getEntity();
                 String responseString = EntityUtils.toString(entity, "UTF-8");
                 var movieEntity = objectMapper.readValue(responseString, MovieEntity.class);
+                //convert move runtime into h and minutes
+                String convertedRuntime = convertRuntime(movieEntity.getRuntime());
+                movieEntity.setRuntime(convertedRuntime);
                 movies.add(movieEntity);
 
             } catch (Exception e) {

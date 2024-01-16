@@ -1853,3 +1853,717 @@ This generated password is for development use only. Your security configuration
 20:44:20.249 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 20:44:20.255 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 20:44:20.261 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+20:44:42.626 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 20932 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+20:44:42.629 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+20:44:42.710 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+20:44:42.710 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+20:44:43.736 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+20:44:43.830 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 2 JPA repository interfaces.
+20:44:44.913 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+20:44:44.924 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+20:44:44.925 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+20:44:44.926 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+20:44:45.035 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+20:44:45.035 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2324 ms
+20:44:45.084 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+20:44:45.424 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+20:44:45.460 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+20:44:45.741 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+20:44:45.806 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+20:44:46.062 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+20:44:46.265 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+20:44:47.436 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+20:44:47.452 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+20:44:48.312 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+20:44:48.369 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 15d3581d-aae5-492d-8efa-d7d242ad963e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+20:44:48.491 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+20:44:48.511 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+20:44:48.511 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+20:44:48.511 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+20:44:48.511 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+20:44:48.511 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+20:44:48.511 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+20:44:48.519 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@746ba67c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5423e777, org.springframework.security.web.context.SecurityContextPersistenceFilter@69ab9e52, org.springframework.security.web.header.HeaderWriterFilter@edc3265, org.springframework.web.filter.CorsFilter@a2e0526, org.springframework.security.web.authentication.logout.LogoutFilter@6d602463, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@622208e2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@575342c3, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@2f02d83c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@673d3e6, org.springframework.security.web.session.SessionManagementFilter@1de7507, org.springframework.security.web.access.ExceptionTranslationFilter@19beaf59, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a6dc337]
+20:44:48.971 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+20:44:48.992 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+20:44:49.017 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+20:44:49.033 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 7.065 seconds (JVM running for 8.551)
+20:44:53.987 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:44:53.988 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+20:44:53.989 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+20:44:54.003 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/fetch
+20:44:54.009 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+20:44:54.025 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+20:44:54.036 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/fetch] with attributes [permitAll]
+20:44:54.037 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/fetch
+20:44:54.071 [http-nio-8080-exec-3] INFO  c.e.moviebackend.movie.MovieService - Generating permutations
+20:44:54.082 [http-nio-8080-exec-3] INFO  c.e.moviebackend.movie.MovieService - Starting to fetch movie data
+20:44:54.083 [http-nio-8080-exec-3] INFO  c.e.moviebackend.movie.MovieService - Starting to fetch movie data
+20:44:54.083 [http-nio-8080-exec-3] INFO  c.e.moviebackend.movie.MovieService - Created iterator
+20:44:54.085 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:44:54.123 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+20:44:54.346 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaa&page=1
+20:44:54.347 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+20:44:54.347 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 41
+20:44:54.370 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaa&page=2
+20:44:54.370 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+20:44:54.370 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 41
+20:44:54.499 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaa&page=3
+20:44:54.499 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+20:44:54.499 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 41
+20:44:54.933 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaa&page=4
+20:44:54.933 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+20:44:54.933 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 41
+20:44:55.081 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaa&page=5
+20:44:55.081 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 41 movies
+20:44:55.082 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 41
+20:45:57.519 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:45:57.565 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aab&page=1
+20:45:57.565 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 4 movies
+20:45:57.566 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 4
+20:46:57.932 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:46:57.974 [pool-1-thread-1] ERROR c.e.moviebackend.movie.MovieService - Error fetching movie with ID aac: Movie not found!
+20:47:57.977 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:47:58.047 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aad&page=1
+20:47:58.048 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1 movies
+20:47:58.048 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 1
+20:47:58.241 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aad liyantaqim
+20:48:58.251 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:48:58.872 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aae&page=1
+20:48:58.872 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 2 movies
+20:48:58.873 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 2
+20:49:04.990 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: We Are One/Aae Khuda
+20:49:05.002 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Koi Aae Na..
+20:50:05.007 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:50:05.737 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaf&page=1
+20:50:05.739 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 4 movies
+20:50:05.739 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 4
+20:50:17.745 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaf
+20:50:17.757 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: The AAF Comes of Age
+20:50:17.768 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Materials Handling in AAF Depots
+20:50:17.779 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Great Tante Aaf
+20:51:17.781 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:51:18.125 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aag&page=1
+20:51:18.125 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+20:51:18.126 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+20:51:19.150 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aag&page=2
+20:51:19.151 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+20:51:19.152 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+20:51:19.561 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aag&page=3
+20:51:19.561 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+20:51:19.561 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+20:51:19.866 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aag&page=4
+20:51:19.866 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+20:51:19.866 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+20:51:20.277 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aag&page=5
+20:51:20.277 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 50 movies
+20:51:20.277 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+20:51:20.558 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aag&page=6
+20:51:20.559 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 60 movies
+20:51:20.559 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+20:51:20.892 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aag&page=7
+20:51:20.892 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 65 movies
+20:51:20.892 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+20:54:22.863 [pool-1-thread-1] ERROR c.e.moviebackend.movie.MovieService - Error occurred while fetching movies
+java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+	at com.example.moviebackend.movie.MovieService.getMoviesList(MovieService.java:256)
+	at com.example.moviebackend.movie.MovieService.lambda$startFetching$0(MovieService.java:89)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4684)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4586)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3548)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3516)
+	at com.example.moviebackend.movie.MovieService.getMoviesList(MovieService.java:252)
+	... 7 common frames omitted
+20:55:22.880 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:55:23.476 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aah&page=1
+20:55:23.477 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+20:55:23.477 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 18
+20:55:24.094 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aah&page=2
+20:55:24.095 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 18 movies
+20:55:24.095 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 18
+20:56:26.682 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah
+20:56:26.702 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ah Aah: Anbe Aaruyire
+20:56:26.722 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah... Tamara
+20:56:26.740 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah! Harimanada
+20:56:26.758 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Trey Songz: Say Aah
+20:56:26.771 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Gina G: Ooh Aah... Just a Little Bit
+20:56:26.782 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah!
+20:56:26.794 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah se Aah Tak
+20:56:26.808 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: aAh!
+20:56:26.821 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah Sean
+20:56:26.834 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah-E-Mazluman
+20:56:26.850 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aah, Beer
+20:56:26.861 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Say Aah
+20:56:26.872 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Sag mal Aah!
+20:56:26.883 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ooh Aah Kavanagh: My Life at City
+20:56:26.893 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Wildcat Biographies: The Ooh Aah Man Vs. Parkinson's
+20:56:26.904 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ooh, Aah & You
+20:56:26.915 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ooh Aah
+20:57:26.922 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+20:57:27.359 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aai&page=1
+20:57:27.359 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+20:57:27.359 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 42
+20:57:27.705 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aai&page=2
+20:57:27.706 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+20:57:27.706 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 42
+20:57:28.020 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aai&page=3
+20:57:28.020 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+20:57:28.020 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 42
+20:57:28.304 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aai&page=4
+20:57:28.304 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+20:57:28.304 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 42
+20:57:28.611 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aai&page=5
+20:57:28.611 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 42 movies
+20:57:28.611 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 42
+21:00:07.368 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Kuthe Kay Karte
+21:00:07.385 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Shyamchi Aai
+21:00:07.401 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Mala Aai Vhhaychy!
+21:00:07.417 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai
+21:00:07.434 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Shappath..!
+21:00:07.449 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai
+21:00:07.464 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Pahije
+21:00:07.478 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Shappath
+21:00:07.494 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: AAi
+21:00:07.505 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Shyamchi Aai
+21:00:07.517 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai
+21:00:07.532 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Kot Nai (Maa)
+21:00:07.543 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Bahar
+21:00:07.554 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Mala Kshama Kar
+21:00:07.564 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Mi Kuthe Jau?
+21:00:07.577 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Phirse Bahar
+21:00:07.589 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Tulzabhavani
+21:00:07.602 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai
+21:00:07.613 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Kuna Mhanu Mee
+21:00:07.624 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Udhe Ga Amabai
+21:00:07.637 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Aahe Shetat
+21:00:07.648 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Majhi Aai
+21:00:07.661 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: AAi
+21:00:07.673 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Mala Aai Paahije
+21:00:07.685 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai No 1
+21:00:07.696 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Tuch Mazi Aai
+21:00:07.709 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Shotti Aai to Jibon
+21:00:07.722 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai: Mother
+21:00:07.732 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai am Single
+21:00:07.744 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Thor Tujhe Upkaar
+21:00:07.757 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Tuza Ashirwad
+21:00:07.768 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Meri Aai
+21:00:07.779 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Maji Kalubai
+21:00:07.788 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Mala Maaf Kar
+21:00:07.798 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Shakti Devta
+21:00:07.809 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Majhi Aai
+21:00:07.818 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Tuza Charni Majha Sansaar
+21:00:07.829 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Raja Udo Udo
+21:00:07.841 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Chi Saath Kari Jagyavar Maath
+21:00:07.854 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Chimnyaanchi Aai
+21:00:07.865 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aai Mayecha Kawach
+21:00:07.876 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ashirwad Tujha Ekvira Aai
+21:01:07.887 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+21:01:08.262 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=1
+21:01:08.262 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+21:01:08.263 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:08.570 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=2
+21:01:08.570 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+21:01:08.570 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:09.083 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=3
+21:01:09.083 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+21:01:09.083 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:09.401 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=4
+21:01:09.401 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+21:01:09.401 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:09.797 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=5
+21:01:09.797 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 50 movies
+21:01:09.797 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:10.083 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=6
+21:01:10.083 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 60 movies
+21:01:10.084 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:10.411 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=7
+21:01:10.411 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 70 movies
+21:01:10.411 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:11.079 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=8
+21:01:11.079 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 80 movies
+21:01:11.079 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:11.466 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=9
+21:01:11.466 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 90 movies
+21:01:11.466 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:12.052 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=10
+21:01:12.052 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 100 movies
+21:01:12.052 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:01:12.358 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aaj&page=11
+21:01:12.358 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 106 movies
+21:01:12.358 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 106
+21:09:44.893 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Love Aaj Kal
+21:09:44.908 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Love Aaj Kal
+21:09:44.920 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Robibar
+21:09:44.934 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Arjun
+21:09:44.952 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Love Aaj Kal Porshu
+21:09:44.966 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ghawre Bairey Aaj
+21:09:44.980 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Kal Aaj Aur Kal
+21:09:44.995 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Chirokal Aaj
+21:09:45.006 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj
+21:09:45.021 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Goonda Raaj
+21:09:45.035 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Bhalobasa Aaj Kal
+21:09:45.049 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Taaza Khabar
+21:09:45.062 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Awaz
+21:09:45.072 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Crimes Aaj Kal
+21:09:45.080 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kaa M.L.A. Ram Avtar
+21:09:45.088 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Sharate Aaj
+21:09:45.096 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Aur Kal
+21:09:45.104 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Gunda Raaj
+21:09:45.112 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Daur
+21:09:45.120 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ke Sholey
+21:09:45.127 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Ravan
+21:09:45.136 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Chot [Aaj Isko, Kal Tereko]
+21:09:45.142 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Gang Leader
+21:09:45.149 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ke Angaarey
+21:09:45.156 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Mahaatma
+21:09:45.163 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Gunda
+21:09:45.169 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kie Aurat
+21:09:45.176 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Laawaris
+21:09:45.183 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Andha Kanoon
+21:09:45.190 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ke Shahenshah
+21:09:45.196 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Samson
+21:09:45.202 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Ye Ghar
+21:09:45.208 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Amar Pala
+21:09:45.214 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kaal Parshur Galpa
+21:09:45.222 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Nanha Farishta
+21:09:45.229 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ishq Aaj Kal
+21:09:45.236 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kal
+21:09:45.244 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Aur Kal
+21:09:45.251 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Bisarjan
+21:09:45.256 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Housewife Hai... Sab Jaanti Hai
+21:09:45.261 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Cinema
+21:09:45.267 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Aladdin
+21:09:45.272 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Dhara
+21:09:45.276 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Duniya
+21:09:45.281 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Raat
+21:09:45.285 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Farhad
+21:09:45.290 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Hindustan
+21:09:45.295 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Baat
+21:09:45.300 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kal
+21:09:45.304 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Taaqat
+21:09:45.309 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Jhale Mukt Mi
+21:09:45.313 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Watan Ne Humen Pukara
+21:09:45.318 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Pukar
+21:09:45.322 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Kal Nahin Aaj
+21:09:45.327 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Romeo
+21:09:45.332 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Raat
+21:09:45.338 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Raat Hai Zindagi
+21:09:45.343 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Inteqaam
+21:09:45.348 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kal Tere Mere Pyar Ke Charche
+21:09:45.353 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Gaye Holud
+21:09:45.359 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Amader Chhuti
+21:09:45.365 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Kaal Aaj Kaal
+21:09:45.370 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Taza Khabar
+21:09:45.375 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Biwi
+21:09:45.380 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Phir Kyon Aaj?
+21:09:45.385 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Aari Kal Bhab
+21:09:45.390 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Rung De
+21:09:45.394 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Raat
+21:09:45.399 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Maseeha
+21:09:45.404 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Krantiveer
+21:09:45.409 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Deviputra
+21:09:45.413 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Jung
+21:09:45.418 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Kanchani Aaj Bhi Hai
+21:09:45.423 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Jaane ki Zidd Naa Karo
+21:09:45.428 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Fikr.. aaj bhi
+21:09:45.434 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kal Parshu
+21:09:45.438 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Sandhyay
+21:09:45.443 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kal
+21:09:45.448 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Jaana Hai Ke Pyaar Kya Ha
+21:09:45.453 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Di Heer
+21:09:45.457 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Anayasai Aaj
+21:09:45.462 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Gunda
+21:09:45.466 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Shahen Shah
+21:09:45.471 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Parshuram
+21:09:45.475 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Dating Aaj Kal
+21:09:45.479 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Moubane Aaj
+21:09:45.484 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Kal Kare So Aaj
+21:09:45.488 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj o Tumi Ar Aami
+21:09:45.493 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kamran Khan Kay Sath
+21:09:45.498 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Obelay
+21:09:45.503 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Udya
+21:09:45.508 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Kol-Katha
+21:09:45.513 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ami Aaj Bhejabo Chokh Shomudro Joley!
+21:09:45.517 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ke Karan Arjun
+21:09:45.522 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Eto Khushi
+21:09:45.527 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Free Hai - The slap of a prostitute
+21:09:45.532 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Vishal Mishra: Aaj Bhi
+21:09:45.537 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Arjun Kanungo: Fursat Hai Aaj Bhi
+21:09:45.541 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Chalo aaj khud se wada karte hai
+21:09:45.545 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ki Raat Na Ja Pardesi
+21:09:45.549 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Rang Hai
+21:09:45.552 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Ka Zamana Returns
+21:09:45.557 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Aur Kal
+21:09:45.561 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aaj Mere Pyaar Ki Shadi Hai
+21:09:45.564 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Kushant Singh Aaj Bhoot
+21:09:45.568 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Nahi Aaj Nahi
+21:10:45.573 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+21:10:46.212 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aak&page=1
+21:10:46.212 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 3 movies
+21:10:46.212 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 3
+21:11:34.314 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aak Ek Ke Dui
+21:11:34.321 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Najil Aak
+21:11:34.328 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aak: All About Kids
+21:12:34.336 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+21:12:34.657 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aal&page=1
+21:12:34.657 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 9 movies
+21:12:34.658 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 9
+21:13:25.764 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aal
+21:13:25.775 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aal
+21:13:25.785 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aal Abt Clg
+21:13:25.792 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aal Had
+21:13:25.799 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: M. Pearls, A.A.L. The Movie
+21:13:25.806 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Elly Ra'aso Aal Sellem
+21:13:25.813 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Yaatik Aal Aafyé: Night-Shift
+21:13:25.820 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Loulla Âal-Lissar
+21:13:25.827 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ivanakku Sariyaana Aal Illai
+21:14:25.830 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+21:14:26.396 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aam&page=1
+21:14:26.396 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+21:14:26.396 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 15
+21:14:26.712 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aam&page=2
+21:14:26.712 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 15 movies
+21:14:26.712 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 15
+21:15:07.091 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: The Aam Aadmi Family
+21:15:07.100 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Marti, mudir aam
+21:15:07.108 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Yawmiyat Modeer Aam
+21:15:07.116 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Khule-Aam
+21:15:07.123 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Adiyyeit Raie Aam
+21:15:07.131 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Qatal E Aam
+21:15:07.139 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aam Aadmi
+21:15:07.145 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Banj Aam
+21:15:07.150 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aam Kathaler Chhuti
+21:15:07.155 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aam Sutra
+21:15:07.159 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aam Ka Mausam
+21:15:07.163 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aam Kahani
+21:15:07.167 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Qatl-e-Aam
+21:15:07.171 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Diamond Singh Aam Aadmi
+21:15:07.176 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: It's Complicated (Adapted from the film series 'Call It What You Want' by Aam Anusorn)
+21:16:07.186 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+21:16:07.514 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=1
+21:16:07.514 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+21:16:07.514 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:08.058 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=2
+21:16:08.058 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+21:16:08.058 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:08.572 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=3
+21:16:08.572 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+21:16:08.572 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:08.876 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=4
+21:16:08.877 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+21:16:08.877 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:09.183 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=5
+21:16:09.183 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 50 movies
+21:16:09.184 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:09.490 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=6
+21:16:09.491 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 60 movies
+21:16:09.491 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:09.805 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=7
+21:16:09.805 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 70 movies
+21:16:09.805 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:10.111 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=8
+21:16:10.111 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 80 movies
+21:16:10.111 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:10.532 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=9
+21:16:10.533 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 90 movies
+21:16:10.533 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:10.827 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=10
+21:16:10.827 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 100 movies
+21:16:10.827 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:11.141 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=11
+21:16:11.141 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 110 movies
+21:16:11.141 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:11.456 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=12
+21:16:11.456 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 120 movies
+21:16:11.456 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:11.763 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=13
+21:16:11.763 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 130 movies
+21:16:11.764 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:12.134 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=14
+21:16:12.135 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 140 movies
+21:16:12.135 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:12.461 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=15
+21:16:12.461 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 150 movies
+21:16:12.461 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:12.768 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=16
+21:16:12.768 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 160 movies
+21:16:12.768 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:16:13.090 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aan&page=17
+21:16:13.091 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 169 movies
+21:16:13.091 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 169
+21:23:32.989 [pool-1-thread-1] ERROR c.e.moviebackend.movie.MovieService - Error occurred while fetching movies
+java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+	at com.example.moviebackend.movie.MovieService.getMoviesList(MovieService.java:256)
+	at com.example.moviebackend.movie.MovieService.lambda$startFetching$0(MovieService.java:89)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4684)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4586)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3548)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3516)
+	at com.example.moviebackend.movie.MovieService.getMoviesList(MovieService.java:252)
+	... 7 common frames omitted
+21:24:33.000 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+21:24:33.614 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aao&page=1
+21:24:33.614 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+21:24:33.614 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 27
+21:24:33.894 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aao&page=2
+21:24:33.895 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+21:24:33.895 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 27
+21:24:34.431 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aao&page=3
+21:24:34.431 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 27 movies
+21:24:34.431 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 27
+21:25:50.434 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Wish Karein
+21:25:50.445 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Pyaar Karen
+21:25:50.455 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Pyar Karen
+21:25:50.464 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ek Baar Chale Aao
+21:25:50.473 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Kahani Buntay Hain
+21:25:50.478 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Jao Ghar Tumhara
+21:25:50.482 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Hum Saath Chalein
+21:25:50.487 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Laut Aao Trisha
+21:25:50.491 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Baby Pyar Karen
+21:25:50.496 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Baahon Mein Chali Aao
+21:25:50.501 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Paas Aao Na
+21:25:50.505 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Huzoor Tumko
+21:25:50.510 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Kabhi Jo
+21:25:50.514 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Kahaani Likhe
+21:25:50.518 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Khelein Gilli Danda
+21:25:50.522 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Unhe Yaad Karai - Waliv Tem Karhoukh Yaad
+21:25:50.526 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Khelein Safai Safai
+21:25:50.530 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Laut Chalain
+21:25:50.535 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Hasdey Aao Husdey Jao
+21:25:50.538 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Pyar Karen
+21:25:50.542 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Laut aao maa
+21:25:50.547 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Ek baar aao Janwai ji pawana
+21:25:50.551 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Åäö
+21:25:50.554 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Hajj Karen
+21:25:50.558 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Pyaar Karen
+21:25:50.562 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Tum Laut Aao
+21:25:50.565 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Saved movie: Aao Milkar Gaen
+21:26:50.566 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Running task
+21:26:52.263 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aap&page=1
+21:26:52.263 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+21:26:52.263 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+21:26:52.672 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aap&page=2
+21:26:52.672 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+21:26:52.672 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+21:26:52.980 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aap&page=3
+21:26:52.980 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+21:26:52.980 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+21:26:53.388 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aap&page=4
+21:26:53.388 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+21:26:53.388 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+21:26:53.746 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aap&page=5
+21:26:53.746 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 50 movies
+21:26:53.746 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+21:26:54.930 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aap&page=6
+21:26:54.930 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 60 movies
+21:26:54.930 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+21:26:55.436 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=aap&page=7
+21:26:55.437 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 65 movies
+21:26:55.437 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Total results: 65
+22:09:40.821 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=41m24s529ms954µs400ns).
+04:54:40.830 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h6m59s422ms691µs800ns).
+12:54:28.834 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 10788 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+12:54:28.934 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:54:29.050 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+12:54:29.050 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+12:54:30.610 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:54:30.768 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 129 ms. Found 2 JPA repository interfaces.
+12:54:32.602 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:54:32.626 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:54:32.627 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:54:32.627 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+12:54:32.779 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:54:32.780 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3728 ms
+12:54:32.832 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:54:33.215 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:54:33.246 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+12:54:33.621 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:54:33.755 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+12:54:34.083 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+12:54:34.412 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+12:54:36.032 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:54:36.052 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:54:37.612 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+12:54:37.742 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a8e073d0-ebbb-4fb2-81e2-74e17f049f76
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+12:54:38.117 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+12:54:38.181 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+12:54:38.181 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+12:54:38.182 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+12:54:38.182 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+12:54:38.182 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+12:54:38.182 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+12:54:38.198 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3bd8245b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cc3ffa3, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d9fb450, org.springframework.security.web.header.HeaderWriterFilter@67cef5ee, org.springframework.web.filter.CorsFilter@11e4f910, org.springframework.security.web.authentication.logout.LogoutFilter@206ed1d1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48a4ebef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ce4703e, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@3836428f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42b6432e, org.springframework.security.web.session.SessionManagementFilter@69b35fe5, org.springframework.security.web.access.ExceptionTranslationFilter@de58c95, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@612000a4]
+12:54:38.797 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:54:38.841 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:54:38.877 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:54:38.897 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 10.783 seconds (JVM running for 12.913)
+12:55:51.289 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:55:51.289 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:55:51.291 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+12:55:51.308 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/aaa
+12:55:51.314 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+12:55:51.330 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+12:55:51.342 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/aaa] with attributes [permitAll]
+12:55:51.343 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/aaa
+12:55:52.378 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+12:57:00.112 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/aaa/similar
+12:57:00.112 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+12:57:00.113 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+12:57:00.114 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/aaa/similar] with attributes [permitAll]
+12:57:00.114 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/aaa/similar
+12:57:00.163 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+12:57:28.797 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:57:28.802 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:57:28.807 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:57:37.072 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 5752 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+12:57:37.080 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:57:37.221 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+12:57:37.221 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+12:57:38.968 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:57:39.117 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 127 ms. Found 2 JPA repository interfaces.
+12:57:40.738 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:57:40.759 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:57:40.760 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:57:40.761 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+12:57:40.936 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:57:40.937 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3714 ms
+12:57:41.010 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:57:41.427 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:57:41.452 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+12:57:41.890 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:57:42.034 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+12:57:42.531 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+12:57:42.935 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+12:57:44.767 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:57:44.791 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:57:46.656 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+12:57:46.774 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 011bff99-9799-4cbe-ba0f-0784655991fe
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+12:57:47.070 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+12:57:47.113 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+12:57:47.113 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+12:57:47.113 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+12:57:47.114 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+12:57:47.114 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+12:57:47.114 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+12:57:47.132 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33f8fc45, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7efc196a, org.springframework.security.web.context.SecurityContextPersistenceFilter@45607b65, org.springframework.security.web.header.HeaderWriterFilter@3ee31a4d, org.springframework.web.filter.CorsFilter@19c6a63c, org.springframework.security.web.authentication.logout.LogoutFilter@72379293, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f93145d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3effad40, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@6fd964fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b37b791, org.springframework.security.web.session.SessionManagementFilter@4224e399, org.springframework.security.web.access.ExceptionTranslationFilter@1de47522, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22303825]
+12:57:47.931 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:57:47.969 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:57:48.016 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:57:48.049 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 11.999 seconds (JVM running for 14.774)
+13:03:41.963 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:03:41.963 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:03:41.965 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+13:03:41.993 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/aaa/similar
+13:03:42.004 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+13:03:42.015 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+13:03:42.026 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/aaa/similar] with attributes [permitAll]
+13:03:42.027 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/aaa/similar
+13:04:10.236 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+13:08:01.516 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/AAA/similar
+13:08:01.517 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+13:08:01.517 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+13:08:01.518 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/AAA/similar] with attributes [permitAll]
+13:08:01.518 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/AAA/similar
+13:08:09.761 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError); nested exception is com.fasterxml.jackson.databind.JsonMappingException: Infinite recursion (StackOverflowError) (through reference chain: com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"]->org.hibernate.collection.internal.PersistentBag[0]->com.example.moviebackend.movie.RatingEntity["movie"]->com.example.moviebackend.movie.MovieEntity["Ratings"])]
+13:08:09.860 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+13:09:14.895 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:09:14.900 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:09:14.909 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:09:22.656 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 10188 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+13:09:22.660 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+13:09:22.747 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:09:22.748 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:09:24.160 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:09:24.305 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 122 ms. Found 2 JPA repository interfaces.
+13:09:25.643 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:09:25.663 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:09:25.664 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:09:25.664 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+13:09:25.834 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:09:25.834 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3085 ms
+13:09:25.915 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:09:26.378 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:09:26.403 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+13:09:26.843 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:09:26.992 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+13:09:27.511 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:09:27.799 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:09:29.518 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:09:29.550 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:09:31.265 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:09:31.349 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fb9937ee-7774-44d7-a540-9f3f8e2c5e55
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+13:09:31.557 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+13:09:31.580 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+13:09:31.580 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+13:09:31.580 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+13:09:31.580 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+13:09:31.581 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+13:09:31.581 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+13:09:31.590 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@23dd6691, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@746106eb, org.springframework.security.web.context.SecurityContextPersistenceFilter@31223622, org.springframework.security.web.header.HeaderWriterFilter@ac4337, org.springframework.web.filter.CorsFilter@69fe1810, org.springframework.security.web.authentication.logout.LogoutFilter@68f9bff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f9d2112, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f0cbe31, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@65ca85a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d6b9e65, org.springframework.security.web.session.SessionManagementFilter@470a9282, org.springframework.security.web.access.ExceptionTranslationFilter@56c1e818, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@415bda47]
+13:09:32.268 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:09:32.306 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:09:32.348 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:09:32.383 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 10.429 seconds (JVM running for 12.085)
+13:09:37.936 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:09:37.937 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:09:37.939 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+13:09:37.974 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/AAA/similar
+13:09:37.989 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+13:09:38.008 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+13:09:38.028 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/AAA/similar] with attributes [permitAll]
+13:09:38.030 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/AAA/similar
+13:09:41.599 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+13:17:12.663 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/AAA/similar
+13:17:12.663 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+13:17:12.671 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+13:17:12.671 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/AAA/similar] with attributes [permitAll]
+13:17:12.671 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/AAA/similar
+13:17:18.394 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request

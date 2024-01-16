@@ -21,4 +21,5 @@ jwt:
   secret: MovieBackendSecretKey
 api:
   secret: "43dd2ba4"
-
+fetch:
+  interval: 10000
