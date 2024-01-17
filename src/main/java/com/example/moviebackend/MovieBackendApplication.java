@@ -1,14 +1,15 @@
 package com.example.moviebackend;
 
-import com.example.moviebackend.movie.APIDataFetcherService;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
+//@EnableScheduling // Enables the use of @Scheduled annotations
 public class MovieBackendApplication {
 
     public static void main(String[] args) {

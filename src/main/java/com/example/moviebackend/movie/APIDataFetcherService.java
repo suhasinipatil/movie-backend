@@ -22,6 +22,8 @@ public class APIDataFetcherService {
     private static final Logger logger = Logger.getLogger(APIDataFetcherService.class.getName());
     private final MovieService movieService;
 
+    private Iterator<String> iterator;
+
     /**
      * Constructs a new APIDataFetcherService with the given MovieService.
      *
@@ -29,6 +31,8 @@ public class APIDataFetcherService {
      */
     public APIDataFetcherService(MovieService movieService) {
         this.movieService = movieService;
+        List<String> permutations = generatePermutations();
+        iterator = permutations.iterator();
     }
 
     /**
@@ -38,39 +42,30 @@ public class APIDataFetcherService {
      */
     @Scheduled(fixedRateString = "${fetch.interval}")
     public void startFetching(){
-        List<String> permutations = generatePermutations();
-        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+        logger.info("Fetching data from API...");
 
-        // Create an iterator for the permutations list
-        Iterator<String> iterator = permutations.iterator();
-
-        Runnable task = () -> {
-            try {
-                // Check if there is a next permutation
-                if(iterator.hasNext()){
-                    // Fetch data from API using the next permutation
-                    List<MovieEntity> movies = movieService.getMoviesList(iterator.next());
-                    // Add data to database
-                    for(MovieEntity movie : movies){
-                        //check if the movie already exists in the database
-                        if(movieService.getMovie(movie.getImdbID()) != null){
-                            continue;
-                        }
-                        movieService.saveMovie(movie);
+        try {
+            // Check if there is a next permutation
+            if(iterator.hasNext()){
+                String next = iterator.next();
+                logger.info("Fetching data using permutation: " + next);
+                // Fetch data from API using the next permutation
+                List<MovieEntity> movies = movieService.getMoviesList(next);
+                logger.info("Fetched " + movies.size() + " movies");
+                // Add data to database
+                for(MovieEntity movie : movies){
+                    //check if the movie already exists in the database
+                    if(movieService.findByImdbID(movie.getImdbID()) != null){
+                        continue;
                     }
-                } else {
-                    // If there are no more permutations, stop the executor
-                    executorService.shutdown();
+                    movieService.saveMovie(movie);
+                    logger.info("Saved movie: " + movie.getTitle());
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-        };
-
-        // Schedule the task to run every 10 minutes
-        executorService.scheduleWithFixedDelay(task, 0, 10, TimeUnit.MINUTES);
+        } catch (Exception e) {
+            logger.warning("Error fetching data from API: " + e.getMessage());
+        }
     }
-
     /**
      * Generates all possible permutations of a given length using the English alphabet.
      *

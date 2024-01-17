@@ -28,11 +28,11 @@ public class MovieController {
     }
 
 
-    @GetMapping("/fetch")
+   /* @GetMapping("/fetch")
     public ResponseEntity<Void> fetchMovieData() {
         movieService.fetchMovieData();
         return ResponseEntity.ok().build();
-    }
+    }*/
 
     @GetMapping("/{title}/similar")
     public ResponseEntity<List<MovieEntity>> getSimilarMovies(@PathVariable String title){

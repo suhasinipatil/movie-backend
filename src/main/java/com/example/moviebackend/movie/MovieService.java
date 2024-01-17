@@ -67,84 +67,6 @@ public class MovieService {
         this.userService = userService;
     }
 
-    /**
-     * Starts fetching movie data from an API using the given permutations.
-     * The data is fetched at fixed intervals using a ScheduledExecutorService.
-     *
-     * @param permutations the permutations to use for fetching the data
-     */
-    public void startFetching(List<String> permutations){
-        logger.info("Starting to fetch movie data");
-        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-
-        // Create an iterator for the permutations list
-        Iterator<String> iterator = permutations.iterator();
-        logger.info("Created iterator");
-        Runnable task = () -> {
-            logger.info("Running task");
-            try {
-                // Check if there is a next permutation
-                if(iterator.hasNext()){
-                    // Fetch data from API using the next permutation
-                    List<MovieEntity> movies = getMoviesList(iterator.next());
-                    // Add data to database
-                    for(MovieEntity movie : movies){
-                        //check if the movie already exists in the database
-                        if(movieRepository.findByImdbID(movie.getImdbID()).isPresent()){
-                            continue;
-                        }
-                        saveMovie(movie);
-                        logger.info("Saved movie: " + movie.getTitle());
-                    }
-                } else {
-                    // If there are no more permutations, stop the executor
-                    executorService.shutdown();
-                }
-            } catch (Exception e) {
-                logger.error("Error occurred while fetching movies", e);
-                e.printStackTrace();
-            }
-        };
-
-        // Schedule the task to run every 10 minutes
-        executorService.scheduleWithFixedDelay(task, 0, 1, TimeUnit.MINUTES);
-    }
-
-    /**
-     * Generates all possible permutations of a given length using the English alphabet.
-     *
-     * @return a list of all possible permutations
-     */
-    public List<String> generatePermutations(){
-        int totalCharacters = 26; // 26 letters
-        int wordLength = 3;
-        List<String> permutations = new ArrayList<>();
-
-        // Generate all possible permutations
-        for(int i = 0; i < Math.pow(totalCharacters, wordLength); i++){
-            StringBuilder permutation = new StringBuilder();
-            int temp = i;
-
-            // Construct the permutation by converting the number to base 'totalCharacters'
-            for(int j = 0; j < wordLength; j++){
-                char character = (char) ('a' + temp % totalCharacters);
-                permutation.insert(0, character);
-                temp /= totalCharacters;
-            }
-
-            permutations.add(permutation.toString());
-        }
-
-        return permutations;
-    }
-
-    public void fetchMovieData() {
-        logger.info("Generating permutations");
-        List<String> permutations = generatePermutations();
-        logger.info("Starting to fetch movie data");
-        startFetching(permutations);
-    }
-
     public List<MovieEntity> getAllMovies(String keyword){
         return movieRepository.findByKeyword(keyword);
     }
@@ -269,6 +191,10 @@ public class MovieService {
                 String responseString = EntityUtils.toString(entity, "UTF-8");
                 var movieEntity = objectMapper.readValue(responseString, MovieEntity.class);
                 //convert move runtime into h and minutes
+                if(movieEntity.getRuntime().contains("N/A")){
+                    movies.add(movieEntity);
+                    continue;
+                }
                 String convertedRuntime = convertRuntime(movieEntity.getRuntime());
                 movieEntity.setRuntime(convertedRuntime);
                 movies.add(movieEntity);
