@@ -22,21 +22,14 @@ public class MovieController {
     }
 
     @GetMapping("/{title}")
-    public ResponseEntity<ResponseMovieDTO> getMovies(@PathVariable String title){
-        var searchedMovie = movieService.getMovie(title);
+    public ResponseEntity<List<MovieEntity>> searchMovies(@PathVariable String title){
+        var searchedMovie = movieService.getAllMovies(title);
         return ResponseEntity.ok(searchedMovie);
     }
 
-
-   /* @GetMapping("/fetch")
-    public ResponseEntity<Void> fetchMovieData() {
-        movieService.fetchMovieData();
-        return ResponseEntity.ok().build();
-    }*/
-
-    @GetMapping("/{title}/similar")
-    public ResponseEntity<List<MovieEntity>> getSimilarMovies(@PathVariable String title){
-        var searchedMovie = movieService.getAllMovies(title);
+    @GetMapping("/similar/{imdbID}")
+    public ResponseEntity<List<MovieEntity>> getMovie(@PathVariable String imdbID){
+        var searchedMovie = movieService.getRecommendedMovies(imdbID);
         return ResponseEntity.ok(searchedMovie);
     }
 

@@ -71,47 +71,53 @@ public class MovieService {
         return movieRepository.findByKeyword(keyword);
     }
 
-    public List<SimilarMovieEntity> searchMovie(String title){
-        String url = API_URL + "&s=" + title;
-
-        HttpGet request = httpGet(url);
-        try {
-            HttpResponse response = client.execute(request);
-            HttpEntity entity = response.getEntity();
-            String responseString = EntityUtils.toString(entity, "UTF-8");
-            //System.out.println(responseString);
-            MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
-            return movies.getSearch();
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            request.releaseConnection();
+    //write method to give movie recommendation
+    public List<MovieEntity> getRecommendedMovies(String imdbID){
+        MovieEntity movieEntity = movieRepository.findByImdbID(imdbID).orElse(null);
+        if(movieEntity == null){
+            throw new MovieNotFoundException(imdbID);
         }
-    }
 
-    /**
-     * Retrieves a movie by title.
-     *
-     * @param title The title of the movie.
-     * @return The movie details.
-     */
-    public ResponseMovieDTO getMovie(String title){
-        String url = API_URL + "&t=" + title;
+        List<MovieEntity> recommendedMovies = new ArrayList<>();
+        List<MovieEntity> allMovies = movieRepository.findAll();
+        String genre = movieEntity.getGenre();
+        String imdbRatingStr = movieEntity.getImdbRating();
+        float imdbRating = "N/A".equals(imdbRatingStr) ? -1.0f : Float.parseFloat(imdbRatingStr);
+        String director = movieEntity.getDirector();
+        String writer = movieEntity.getWriter();
+        String language = movieEntity.getLanguage();
+        String actors = movieEntity.getActors();
 
-        HttpGet request = httpGet(url);
-        try {
-            HttpResponse response = client.execute(request);
-            HttpEntity entity = response.getEntity();
-            String responseString = EntityUtils.toString(entity, "UTF-8");
-            var movie = objectMapper.readValue(responseString, ResponseMovieDTO.class);
-            return movie;
+        float lowerBound = imdbRating - 2.0f; // 2 less than the current movie's rating
+        float upperBound = imdbRating + 2.0f; // 2 more than the current movie's rating
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            request.releaseConnection();
+        for(MovieEntity movie : allMovies){
+            String movieImdbRatingStr = movie.getImdbRating();
+            float movieImdbRating = "N/A".equals(movieImdbRatingStr) ? -1.0f : Float.parseFloat(movieImdbRatingStr);
+            if((!"N/A".equals(genre) && movie.getGenre().contains(genre))
+                    && (!"N/A".equals(director) && movie.getDirector().contains(director))
+                    && (!"N/A".equals(writer) && movie.getWriter().contains(writer))
+                    && (!"N/A".equals(language) && movie.getLanguage().contains(language))
+                    && (!"N/A".equals(actors) && movie.getActors().contains(actors))
+                    && (imdbRating != -1.0f && movieImdbRating >= lowerBound && movieImdbRating <= upperBound)){
+                recommendedMovies.add(movie);
+            }
         }
+
+        /*for(MovieEntity movie : allMovies){
+            String movieImdbRatingStr = movie.getImdbRating();
+            float movieImdbRating = "N/A".equals(movieImdbRatingStr) ? -1.0f : Float.parseFloat(movieImdbRatingStr);
+            if((!"N/A".equals(genre) && movie.getGenre().contains(genre))
+                    || (!"N/A".equals(director) && movie.getDirector().contains(director))
+                    || (!"N/A".equals(writer) && movie.getWriter().contains(writer))
+                    || (!"N/A".equals(language) && movie.getLanguage().contains(language))
+                    || (!"N/A".equals(actors) && movie.getActors().contains(actors))
+                    || (imdbRating != -1.0f && movieImdbRating >= lowerBound && movieImdbRating <= upperBound)){
+                recommendedMovies.add(movie);
+            }
+        }*/
+
+        return recommendedMovies;
     }
 
     /**
@@ -120,7 +126,7 @@ public class MovieService {
      * @param title The title of the movie
      * @return A list of similar movies.
      */
-     public List<SimilarMovieEntity> getSimilarMovies(String title){
+    public List<SimilarMovieEntity> searchMovies(String title){
         List<SimilarMovieEntity> allMovies = new ArrayList<>();
         int page = 1;
 
@@ -177,7 +183,7 @@ public class MovieService {
     }
 
     public List<MovieEntity> getMoviesList(String title){
-        List<SimilarMovieEntity> similarMovies = getSimilarMovies(title);
+        List<SimilarMovieEntity> similarMovies = searchMovies(title);
         List<MovieEntity> movies = new ArrayList<>();
 
         for(SimilarMovieEntity movie : similarMovies){
@@ -224,7 +230,11 @@ public class MovieService {
     }
 
     public MovieEntity findByImdbID(String imdbID){
-        return movieRepository.findByImdbID(imdbID).orElse(null);
+        MovieEntity movieEntity = movieRepository.findByImdbID(imdbID).orElse(null);
+        if(movieEntity == null){
+            throw new MovieNotFoundException(imdbID);
+        }
+        return movieEntity;
     }
 
 
@@ -285,6 +295,13 @@ public class MovieService {
         }
         user.setLstMovie(lstMovies);
         userService.save(user);
+    }
+
+    //Movie not found Exception
+    public static class MovieNotFoundException extends RuntimeException {
+        public MovieNotFoundException(String imdbID) {
+            super("Could not find movie with ID " + imdbID);
+        }
     }
 
 }
