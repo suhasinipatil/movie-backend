@@ -18,4 +18,8 @@ public interface MovieRepository extends JpaRepository<MovieEntity, Integer> {
     @Query("SELECT m FROM movies m WHERE m.title LIKE %:keyword%")
     List<MovieEntity> findByKeyword(@Param("keyword") String keyword);
 
+    // filter movies which have come after certain year
+    @Query("SELECT m FROM movies m WHERE m.year >= :year")
+    List<MovieEntity> findByYear(@Param("year") String year);
+
 }

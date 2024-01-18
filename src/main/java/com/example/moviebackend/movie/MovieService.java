@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -91,7 +92,7 @@ public class MovieService {
         float lowerBound = imdbRating - 2.0f; // 2 less than the current movie's rating
         float upperBound = imdbRating + 2.0f; // 2 more than the current movie's rating
 
-        for(MovieEntity movie : allMovies){
+       /* for(MovieEntity movie : allMovies){
             String movieImdbRatingStr = movie.getImdbRating();
             float movieImdbRating = "N/A".equals(movieImdbRatingStr) ? -1.0f : Float.parseFloat(movieImdbRatingStr);
             if((!"N/A".equals(genre) && movie.getGenre().contains(genre))
@@ -102,9 +103,14 @@ public class MovieService {
                     && (imdbRating != -1.0f && movieImdbRating >= lowerBound && movieImdbRating <= upperBound)){
                 recommendedMovies.add(movie);
             }
-        }
+        }*/
 
-        /*for(MovieEntity movie : allMovies){
+        for(MovieEntity movie : allMovies){
+            // Skip the given movie
+            if(movie.getImdbID().equals(imdbID)){
+                continue;
+            }
+
             String movieImdbRatingStr = movie.getImdbRating();
             float movieImdbRating = "N/A".equals(movieImdbRatingStr) ? -1.0f : Float.parseFloat(movieImdbRatingStr);
             if((!"N/A".equals(genre) && movie.getGenre().contains(genre))
@@ -115,9 +121,40 @@ public class MovieService {
                     || (imdbRating != -1.0f && movieImdbRating >= lowerBound && movieImdbRating <= upperBound)){
                 recommendedMovies.add(movie);
             }
-        }*/
+        }
+
+        recommendedMovies.sort(Comparator.comparing(MovieEntity::getYear).reversed());
+        recommendedMovies.removeIf(movie -> movie.getPoster() == null || "N/A".equals(movie.getPoster()));
 
         return recommendedMovies;
+    }
+
+    // List movies of the latest year from now
+    public List<MovieEntity> filterMoviesByYear(){
+        int currentYear = java.time.Year.now().getValue() - 2;
+        List<MovieEntity> movieEntities = movieRepository.findByYear(currentYear + "");
+
+        // Remove movies which don't have a poster
+        movieEntities.removeIf(movie -> movie.getPoster() == null || "N/A".equals(movie.getPoster()));
+
+        // Sort movies first which have imdb and in highest first order
+        // Movies with imdb as N/A are put at the end
+        movieEntities.sort((movie1, movie2) -> {
+            String rating1 = movie1.getImdbRating();
+            String rating2 = movie2.getImdbRating();
+
+            if("N/A".equals(rating1) && "N/A".equals(rating2)){
+                return 0;
+            } else if("N/A".equals(rating1)){
+                return 1;
+            } else if("N/A".equals(rating2)){
+                return -1;
+            } else {
+                return Float.compare(Float.parseFloat(rating2), Float.parseFloat(rating1));
+            }
+        });
+
+        return movieEntities;
     }
 
     /**

@@ -5339,3 +5339,1120 @@ This generated password is for development use only. Your security configuration
 16:22:07.199 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 16:22:07.207 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 16:22:07.221 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+17:07:26.303 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 7844 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+17:07:26.307 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+17:07:26.391 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+17:07:26.391 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+17:07:28.258 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:07:28.353 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+17:07:29.871 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+17:07:29.895 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:07:29.896 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:07:29.897 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+17:07:30.067 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:07:30.067 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3675 ms
+17:07:30.170 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:07:30.548 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:07:30.571 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+17:07:30.918 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+17:07:30.997 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+17:07:31.430 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:07:31.682 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+17:07:33.324 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:07:33.343 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:07:34.724 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17:07:34.816 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5758bf3c-12eb-4aa1-bf6d-a1bac0133547
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+17:07:35.012 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+17:07:35.045 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+17:07:35.045 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+17:07:35.045 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+17:07:35.045 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+17:07:35.046 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+17:07:35.046 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+17:07:35.058 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@322e6431, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69327e7e, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ed1c9f5, org.springframework.security.web.header.HeaderWriterFilter@583e1ccb, org.springframework.web.filter.CorsFilter@27675032, org.springframework.security.web.authentication.logout.LogoutFilter@7d7ab00b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b95f343, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f52e743, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@786f4fd5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3921b305, org.springframework.security.web.session.SessionManagementFilter@198b303a, org.springframework.security.web.access.ExceptionTranslationFilter@56240892, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21d48bb0]
+17:07:35.683 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:07:35.718 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:07:35.754 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+17:07:35.785 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 10.72 seconds (JVM running for 12.186)
+17:08:01.688 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:08:01.689 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:08:01.692 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+17:08:01.714 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0155174
+17:08:01.721 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:08:01.766 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:08:01.781 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0155174] with attributes [permitAll]
+17:08:01.782 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0155174
+17:08:02.279 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:08:57.190 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0155174
+17:08:57.190 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:08:57.191 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:08:57.192 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0155174] with attributes [permitAll]
+17:08:57.192 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0155174
+17:08:57.230 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:09:22.503 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+17:09:22.507 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+17:09:22.513 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+17:11:09.636 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 17464 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+17:11:09.641 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+17:11:09.719 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+17:11:09.720 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+17:11:11.024 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:11:11.168 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 2 JPA repository interfaces.
+17:11:12.504 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+17:11:12.522 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:11:12.523 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:11:12.523 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+17:11:12.678 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:11:12.679 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2958 ms
+17:11:12.735 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:11:13.043 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:11:13.070 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+17:11:13.427 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+17:11:13.546 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+17:11:13.974 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:11:14.304 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+17:11:15.789 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:11:15.838 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:11:17.187 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17:11:17.255 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 572cc098-4af2-4034-9be3-ce0a00a11edf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+17:11:17.452 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+17:11:17.483 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+17:11:17.484 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+17:11:17.484 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+17:11:17.484 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+17:11:17.485 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+17:11:17.485 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+17:11:17.499 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3aa0a587, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a5f5a13, org.springframework.security.web.context.SecurityContextPersistenceFilter@61de9908, org.springframework.security.web.header.HeaderWriterFilter@4686bc32, org.springframework.web.filter.CorsFilter@7da2070c, org.springframework.security.web.authentication.logout.LogoutFilter@7367f888, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22d822b6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d6e764e, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@3dde15a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ed0305, org.springframework.security.web.session.SessionManagementFilter@2ad25353, org.springframework.security.web.access.ExceptionTranslationFilter@21ab897, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@902c259]
+17:11:18.093 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:11:18.129 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:11:18.169 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+17:11:18.200 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 9.634 seconds (JVM running for 10.899)
+17:11:27.793 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:11:27.793 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:11:27.795 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+17:11:27.810 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0155174
+17:11:27.816 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:11:27.866 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:11:27.880 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0155174] with attributes [permitAll]
+17:11:27.881 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0155174
+17:11:28.291 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0155174
+17:11:28.291 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:11:28.292 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:11:28.293 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0155174] with attributes [permitAll]
+17:11:28.293 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0155174
+17:11:28.488 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:11:28.536 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:13:43.860 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0264330
+17:13:43.861 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:13:43.863 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:13:43.863 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0264330] with attributes [permitAll]
+17:13:43.864 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0264330
+17:13:43.984 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:13:44.879 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1484065
+17:13:44.880 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:13:44.883 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:13:44.884 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1484065] with attributes [permitAll]
+17:13:44.884 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1484065
+17:13:44.979 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:13:45.922 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0264330
+17:13:45.924 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:13:45.926 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:13:45.926 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0264330] with attributes [permitAll]
+17:13:45.927 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0264330
+17:13:46.019 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:13:48.877 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0068162
+17:13:48.878 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:13:48.879 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:13:48.880 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0068162] with attributes [permitAll]
+17:13:48.880 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0068162
+17:13:48.976 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:13:50.774 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0264330
+17:13:50.774 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:13:50.776 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:13:50.776 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0264330] with attributes [permitAll]
+17:13:50.777 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0264330
+17:13:50.885 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:14:00.423 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0068162
+17:14:00.424 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:14:00.425 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:14:00.426 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0068162] with attributes [permitAll]
+17:14:00.426 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0068162
+17:14:00.518 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:14:02.764 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0264330
+17:14:02.764 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:14:02.765 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:14:02.767 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0264330] with attributes [permitAll]
+17:14:02.767 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0264330
+17:14:02.884 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:14:04.148 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0068162
+17:14:04.148 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:14:04.150 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:14:04.150 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0068162] with attributes [permitAll]
+17:14:04.150 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0068162
+17:14:04.243 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:14:21.894 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0068162
+17:14:21.895 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:14:21.895 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:14:21.896 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0068162] with attributes [permitAll]
+17:14:21.896 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0068162
+17:14:21.936 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0068162
+17:14:21.937 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:14:21.937 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:14:21.937 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0068162] with attributes [permitAll]
+17:14:21.938 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0068162
+17:14:21.981 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:14:22.019 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:16:11.802 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0264330
+17:16:11.802 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:16:11.803 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:16:11.804 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0264330] with attributes [permitAll]
+17:16:11.804 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0264330
+17:16:11.910 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:16:23.058 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0068162
+17:16:23.058 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:16:23.059 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:16:23.060 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0068162] with attributes [permitAll]
+17:16:23.060 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0068162
+17:16:23.149 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:16:29.942 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1459820
+17:16:29.942 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:16:29.943 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:16:29.943 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1459820] with attributes [permitAll]
+17:16:29.943 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1459820
+17:16:30.087 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:16:33.199 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1669078
+17:16:33.199 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:16:33.200 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:16:33.201 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1669078] with attributes [permitAll]
+17:16:33.201 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1669078
+17:16:33.298 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:16:49.493 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0062614
+17:16:49.493 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:16:49.494 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:16:49.495 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0062614] with attributes [permitAll]
+17:16:49.495 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0062614
+17:16:49.640 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:07.507 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0096748
+17:17:07.507 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:07.508 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:07.509 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0096748] with attributes [permitAll]
+17:17:07.509 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0096748
+17:17:07.650 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:32.499 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1484065
+17:17:32.500 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:32.501 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:32.502 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1484065] with attributes [permitAll]
+17:17:32.502 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1484065
+17:17:32.598 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:36.234 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0307911
+17:17:36.234 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:36.236 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:36.236 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0307911] with attributes [permitAll]
+17:17:36.236 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0307911
+17:17:36.320 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:39.840 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0356319
+17:17:39.841 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:39.842 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:39.842 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0356319] with attributes [permitAll]
+17:17:39.843 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0356319
+17:17:39.958 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:42.010 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0338690
+17:17:42.010 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:42.011 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:42.012 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0338690] with attributes [permitAll]
+17:17:42.012 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0338690
+17:17:42.149 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:45.215 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0177487
+17:17:45.215 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:45.216 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:45.216 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0177487] with attributes [permitAll]
+17:17:45.217 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0177487
+17:17:45.358 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:54.084 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt7976226
+17:17:54.084 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:54.085 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:54.085 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt7976226] with attributes [permitAll]
+17:17:54.085 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt7976226
+17:17:54.154 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:17:57.097 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt2359640
+17:17:57.097 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:17:57.098 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:17:57.099 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt2359640] with attributes [permitAll]
+17:17:57.099 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt2359640
+17:17:57.194 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:01.018 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0177486
+17:18:01.018 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:01.019 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:01.019 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0177486] with attributes [permitAll]
+17:18:01.019 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0177486
+17:18:01.149 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:03.372 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0482034
+17:18:03.372 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:03.374 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:03.374 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0482034] with attributes [permitAll]
+17:18:03.374 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0482034
+17:18:03.528 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:07.602 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt6090790
+17:18:07.602 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:07.603 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:07.603 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt6090790] with attributes [permitAll]
+17:18:07.603 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt6090790
+17:18:07.724 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:11.622 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt21107046
+17:18:11.623 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:11.623 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:11.624 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt21107046] with attributes [permitAll]
+17:18:11.624 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt21107046
+17:18:11.750 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:14.316 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0402740
+17:18:14.316 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:14.317 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:14.317 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0402740] with attributes [permitAll]
+17:18:14.317 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0402740
+17:18:14.432 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:37.238 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0473310
+17:18:37.238 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:37.238 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:37.239 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0473310] with attributes [permitAll]
+17:18:37.239 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0473310
+17:18:37.362 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:40.160 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt19013688
+17:18:40.160 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:40.161 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:40.161 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt19013688] with attributes [permitAll]
+17:18:40.161 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt19013688
+17:18:40.287 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:18:43.714 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0083608
+17:18:43.714 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:18:43.715 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:18:43.715 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0083608] with attributes [permitAll]
+17:18:43.715 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0083608
+17:18:43.857 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:21:50.916 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt2926150
+17:21:50.916 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:21:50.917 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:21:50.917 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt2926150] with attributes [permitAll]
+17:21:50.917 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt2926150
+17:21:51.055 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:21:56.752 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0096748
+17:21:56.752 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:21:56.753 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:21:56.753 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0096748] with attributes [permitAll]
+17:21:56.754 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0096748
+17:21:56.905 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:22:32.554 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0068162
+17:22:32.554 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:22:32.554 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:22:32.555 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0068162] with attributes [permitAll]
+17:22:32.555 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0068162
+17:22:32.643 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:23:01.648 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/AAA/similar
+17:23:01.648 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:23:01.648 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:23:01.649 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/AAA/similar] with attributes [permitAll]
+17:23:01.649 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/AAA/similar
+17:23:01.659 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:23:01.663 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+17:23:01.664 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:23:01.664 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:23:01.664 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+17:23:01.687 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:23:37.305 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/AAA/similar
+17:23:37.305 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:23:37.306 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:23:37.306 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/AAA/similar] with attributes [permitAll]
+17:23:37.306 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/AAA/similar
+17:23:37.312 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+17:23:37.313 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+17:23:37.313 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+17:23:37.313 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+17:23:37.313 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+17:23:37.315 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:04:03.775 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/AAA/similar
+19:04:03.776 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:04:03.776 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:04:03.777 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/AAA/similar] with attributes [permitAll]
+19:04:03.777 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/AAA/similar
+19:04:03.780 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:04:03.781 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+19:04:03.781 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:04:03.781 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:04:03.781 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+19:04:03.782 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:04:41.675 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/AAA
+19:04:41.675 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:04:41.675 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:04:41.676 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/AAA] with attributes [permitAll]
+19:04:41.676 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/AAA
+19:04:41.696 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:04:51.392 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/Aai
+19:04:51.392 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:04:51.393 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:04:51.393 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/Aai] with attributes [permitAll]
+19:04:51.393 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/Aai
+19:04:51.407 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:05:06.085 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt11671144
+19:05:06.086 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:05:06.086 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:05:06.086 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt11671144] with attributes [permitAll]
+19:05:06.086 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt11671144
+19:05:06.110 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt11671144
+19:05:06.111 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:05:06.111 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:05:06.112 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt11671144] with attributes [permitAll]
+19:05:06.112 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt11671144
+19:05:06.157 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:05:06.183 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:05:46.490 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt4431128
+19:05:46.490 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:05:46.490 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:05:46.490 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt4431128] with attributes [permitAll]
+19:05:46.490 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt4431128
+19:05:46.546 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:05:53.542 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0368870
+19:05:53.542 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:05:53.542 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:05:53.542 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0368870] with attributes [permitAll]
+19:05:53.543 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0368870
+19:05:53.606 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:06:09.206 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1669078
+19:06:09.206 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:06:09.206 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:06:09.207 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1669078] with attributes [permitAll]
+19:06:09.207 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1669078
+19:06:09.255 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:07:39.511 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1180328
+19:07:39.511 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:07:39.511 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:07:39.511 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1180328] with attributes [permitAll]
+19:07:39.511 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1180328
+19:07:39.566 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:07:46.801 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1484065
+19:07:46.801 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:07:46.801 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:07:46.801 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1484065] with attributes [permitAll]
+19:07:46.801 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1484065
+19:07:46.843 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:07:48.407 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1669078
+19:07:48.407 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:07:48.408 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:07:48.409 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1669078] with attributes [permitAll]
+19:07:48.409 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1669078
+19:07:48.446 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:07:50.407 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt0307911
+19:07:50.407 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:07:50.408 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:07:50.408 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt0307911] with attributes [permitAll]
+19:07:50.408 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt0307911
+19:07:50.444 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:08:22.439 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt1275863
+19:08:22.439 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:08:22.439 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:08:22.440 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt1275863] with attributes [permitAll]
+19:08:22.440 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt1275863
+19:08:22.507 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:21:26.134 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:21:26.136 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:21:26.140 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:21:30.798 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 14300 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+19:21:30.802 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+19:21:30.878 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+19:21:30.878 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+19:21:31.636 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:21:31.701 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+19:21:32.300 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:21:32.308 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:21:32.308 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:21:32.309 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+19:21:32.383 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:21:32.383 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1504 ms
+19:21:32.409 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:21:32.601 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:21:32.612 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+19:21:32.785 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:21:32.843 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+19:21:33.036 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+19:21:33.171 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+19:21:33.968 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:21:33.977 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:21:34.624 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:21:34.655 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 26550d51-9826-44c5-9107-1ee09a1bfa78
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+19:21:34.747 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+19:21:34.760 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+19:21:34.760 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+19:21:34.761 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+19:21:34.761 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+19:21:34.761 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+19:21:34.761 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+19:21:34.767 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3bbe4068, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1597903e, org.springframework.security.web.context.SecurityContextPersistenceFilter@50f95874, org.springframework.security.web.header.HeaderWriterFilter@7df6f02b, org.springframework.web.filter.CorsFilter@3deee2be, org.springframework.security.web.authentication.logout.LogoutFilter@228ac190, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e5b44e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32444ed5, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@6fee6c17, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@261acc82, org.springframework.security.web.session.SessionManagementFilter@2994f61, org.springframework.security.web.access.ExceptionTranslationFilter@75aaacbf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4022bd57]
+19:21:35.091 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+19:21:35.111 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:21:35.135 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:21:35.147 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 4.754 seconds (JVM running for 5.43)
+19:22:12.047 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:22:12.047 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:22:12.048 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+19:22:12.058 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:22:12.061 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:22:12.074 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:22:12.080 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:22:12.081 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:22:12.274 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:24:54.725 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:24:54.725 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:24:54.735 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:24:54.735 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:24:54.735 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:24:54.760 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:24:54.760 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:24:54.762 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:24:54.762 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:24:54.762 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:24:54.793 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:24:54.821 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:26:03.310 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt15248948
+19:26:03.311 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:26:03.312 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:26:03.313 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt15248948] with attributes [permitAll]
+19:26:03.313 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt15248948
+19:26:03.374 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt15248948
+19:26:03.375 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:26:03.376 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:26:03.376 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt15248948] with attributes [permitAll]
+19:26:03.376 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt15248948
+19:26:03.377 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:26:03.404 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:26:13.472 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:26:13.473 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:26:13.474 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:26:13.474 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:26:13.474 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:26:13.489 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:26:13.490 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:26:13.490 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:26:13.491 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:26:13.491 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:26:13.520 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:26:13.538 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:26:53.710 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt28467730
+19:26:53.711 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:26:53.711 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:26:53.712 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt28467730] with attributes [permitAll]
+19:26:53.712 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt28467730
+19:26:53.737 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt28467730
+19:26:53.737 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:26:53.738 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:26:53.738 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt28467730] with attributes [permitAll]
+19:26:53.738 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt28467730
+19:26:53.779 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:26:53.799 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:28:08.676 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:28:08.676 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:28:08.677 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:28:08.678 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:28:08.678 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:28:08.693 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:28:08.694 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:28:08.695 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:28:08.695 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:28:08.695 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:28:08.712 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:28:08.726 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:28:18.763 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/Love
+19:28:18.763 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:28:18.764 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:28:18.764 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/Love] with attributes [permitAll]
+19:28:18.764 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/Love
+19:28:18.770 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:28:28.296 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt10023024
+19:28:28.296 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:28:28.296 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:28:28.297 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt10023024] with attributes [permitAll]
+19:28:28.297 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt10023024
+19:28:28.317 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt10023024
+19:28:28.317 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:28:28.317 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:28:28.318 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt10023024] with attributes [permitAll]
+19:28:28.318 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt10023024
+19:28:28.338 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:28:28.357 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:29:29.219 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:29:29.220 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:29:29.220 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:29:29.221 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:29:29.221 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:29:29.235 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:29:29.235 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:29:29.235 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:29:29.236 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:29:29.236 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:29:29.249 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:29:29.264 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:29:55.841 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:29:55.844 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:29:55.847 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:29:59.322 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 16436 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+19:29:59.326 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+19:29:59.386 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+19:29:59.386 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+19:29:59.981 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:30:00.035 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+19:30:00.563 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:30:00.570 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:30:00.570 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:30:00.571 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+19:30:00.634 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:30:00.634 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1247 ms
+19:30:00.661 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:30:00.814 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:30:00.826 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+19:30:00.969 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:30:01.015 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+19:30:01.175 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+19:30:01.284 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+19:30:01.931 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:30:01.939 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:30:02.487 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:30:02.514 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f828b27a-fc41-4c2a-9fea-d5769bdec7c3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+19:30:02.593 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+19:30:02.606 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+19:30:02.606 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+19:30:02.606 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+19:30:02.606 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+19:30:02.606 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+19:30:02.606 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+19:30:02.611 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@f25ae1f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45945657, org.springframework.security.web.context.SecurityContextPersistenceFilter@32444ed5, org.springframework.security.web.header.HeaderWriterFilter@4453e1d1, org.springframework.web.filter.CorsFilter@59861426, org.springframework.security.web.authentication.logout.LogoutFilter@23375112, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4637dabd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d03ec3b, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@2988bd48, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b7fbb30, org.springframework.security.web.session.SessionManagementFilter@5f7db9b3, org.springframework.security.web.access.ExceptionTranslationFilter@2994f61, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@565a771]
+19:30:02.881 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+19:30:02.897 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:30:02.919 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:30:02.928 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 4.009 seconds (JVM running for 4.662)
+19:30:18.661 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:30:18.661 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:30:18.662 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+19:30:18.673 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:30:18.677 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:30:18.706 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:30:18.715 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:30:18.716 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:30:18.856 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:30:18.856 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:30:18.857 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:30:18.857 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:30:18.857 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:30:18.857 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:30:18.875 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:30:47.118 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27649767
+19:30:47.118 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:30:47.118 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:30:47.119 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27649767] with attributes [permitAll]
+19:30:47.119 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27649767
+19:30:47.190 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27649767
+19:30:47.190 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:30:47.190 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:30:47.191 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:30:47.191 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27649767] with attributes [permitAll]
+19:30:47.191 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27649767
+19:30:47.219 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:34:54.168 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:34:54.171 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:34:54.174 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:34:58.027 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 4452 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+19:34:58.030 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+19:34:58.096 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+19:34:58.097 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+19:34:58.666 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:34:58.715 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+19:34:59.210 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:34:59.217 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:34:59.218 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:34:59.218 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+19:34:59.279 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:34:59.279 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1182 ms
+19:34:59.301 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:34:59.453 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:34:59.464 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+19:34:59.608 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:34:59.675 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+19:34:59.900 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+19:35:00.051 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+19:35:00.901 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:35:00.909 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:35:01.608 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:35:01.645 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 18268429-6665-4a41-a895-351289c19ccd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+19:35:01.745 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+19:35:01.761 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+19:35:01.762 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+19:35:01.762 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+19:35:01.762 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+19:35:01.762 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+19:35:01.762 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+19:35:01.768 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c3e62e6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5707c63, org.springframework.security.web.context.SecurityContextPersistenceFilter@426668b, org.springframework.security.web.header.HeaderWriterFilter@1e5b44e7, org.springframework.web.filter.CorsFilter@697ef378, org.springframework.security.web.authentication.logout.LogoutFilter@3035de11, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@223c1f12, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72b586f9, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@1fae735c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@981b1d, org.springframework.security.web.session.SessionManagementFilter@32444ed5, org.springframework.security.web.access.ExceptionTranslationFilter@50f95874, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1597903e]
+19:35:02.098 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+19:35:02.120 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:35:02.140 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:35:02.152 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 4.494 seconds (JVM running for 5.191)
+19:35:07.774 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:35:07.774 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:35:07.776 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+19:35:07.789 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:07.794 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:07.827 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:07.837 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:07.837 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:08.035 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:08.036 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:08.037 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:08.037 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:08.037 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:08.050 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:08.077 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:11.334 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt23181916
+19:35:11.334 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:11.335 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:11.335 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt23181916] with attributes [permitAll]
+19:35:11.335 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt23181916
+19:35:11.402 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt23181916
+19:35:11.402 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:11.403 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:11.403 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt23181916] with attributes [permitAll]
+19:35:11.403 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt23181916
+19:35:11.407 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:11.438 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:16.862 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:16.862 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:16.864 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:16.864 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:16.864 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:16.882 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:16.882 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:16.882 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:16.884 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:16.884 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:16.884 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:16.898 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:22.466 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt15464490
+19:35:22.466 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:22.467 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:22.467 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt15464490] with attributes [permitAll]
+19:35:22.467 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt15464490
+19:35:22.492 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt15464490
+19:35:22.493 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:22.493 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:22.494 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt15464490] with attributes [permitAll]
+19:35:22.494 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt15464490
+19:35:22.501 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:22.524 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:24.863 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:24.864 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:24.864 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:24.864 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:24.864 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:24.878 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:24.879 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:24.879 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:24.880 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:24.881 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:24.881 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:24.892 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:30.596 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt22445124
+19:35:30.596 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:30.597 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:30.598 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt22445124] with attributes [permitAll]
+19:35:30.598 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt22445124
+19:35:30.617 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:30.618 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt22445124
+19:35:30.618 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:30.619 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:30.619 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt22445124] with attributes [permitAll]
+19:35:30.619 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt22445124
+19:35:30.637 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:34.104 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:34.105 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:34.106 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:34.107 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:34.107 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:34.122 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:35:34.122 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:35:34.122 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:35:34.122 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:35:34.123 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:35:34.123 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:35:34.135 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:38:10.786 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt20221950
+19:38:10.786 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:38:10.787 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:38:10.787 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt20221950] with attributes [permitAll]
+19:38:10.787 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt20221950
+19:38:10.814 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:38:10.815 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt20221950
+19:38:10.816 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:38:10.816 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:38:10.817 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt20221950] with attributes [permitAll]
+19:38:10.817 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt20221950
+19:38:10.843 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:19.051 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:39:19.051 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:19.052 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:19.053 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:39:19.053 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:39:19.066 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:19.067 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:39:19.067 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:19.068 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:19.069 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:39:19.069 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:39:19.079 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:33.241 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt28696706
+19:39:33.241 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:33.242 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:33.242 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt28696706] with attributes [permitAll]
+19:39:33.242 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt28696706
+19:39:33.268 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt28696706
+19:39:33.268 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:33.268 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:33.268 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt28696706] with attributes [permitAll]
+19:39:33.269 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt28696706
+19:39:33.306 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:33.324 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:46.369 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:39:46.369 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:46.370 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:46.370 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:39:46.370 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:39:46.381 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:46.382 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:39:46.382 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:46.382 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:46.382 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:39:46.382 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:39:46.392 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:59.276 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27302334
+19:39:59.277 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:59.277 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:59.277 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27302334] with attributes [permitAll]
+19:39:59.277 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27302334
+19:39:59.299 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27302334
+19:39:59.299 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:39:59.299 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:39:59.299 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27302334] with attributes [permitAll]
+19:39:59.299 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27302334
+19:39:59.344 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:39:59.360 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:44:05.112 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:44:05.114 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:44:05.120 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:44:09.056 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 12352 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+19:44:09.058 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+19:44:09.113 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+19:44:09.114 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+19:44:09.689 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:44:09.742 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+19:44:10.385 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:44:10.395 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:44:10.396 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:44:10.396 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+19:44:10.475 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:44:10.476 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1361 ms
+19:44:10.508 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:44:10.702 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:44:10.714 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+19:44:10.886 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:44:10.954 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+19:44:11.173 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+19:44:11.296 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+19:44:12.113 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:44:12.125 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:44:12.807 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:44:12.845 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 122a3b66-6445-414d-805d-03b98c7c60d4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+19:44:12.939 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+19:44:12.955 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+19:44:12.956 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+19:44:12.956 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+19:44:12.956 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+19:44:12.956 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+19:44:12.956 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+19:44:12.963 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@63b5d506, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@135f7ebe, org.springframework.security.web.context.SecurityContextPersistenceFilter@1622186d, org.springframework.security.web.header.HeaderWriterFilter@20174f76, org.springframework.web.filter.CorsFilter@6acb6b00, org.springframework.security.web.authentication.logout.LogoutFilter@15ed56b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a8eb233, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76539333, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@a67133e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47b7ea91, org.springframework.security.web.session.SessionManagementFilter@3d2063a, org.springframework.security.web.access.ExceptionTranslationFilter@4e4c25cf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@531136b6]
+19:44:13.305 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+19:44:13.326 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:44:13.345 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:44:13.356 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 4.632 seconds (JVM running for 5.292)
+19:44:48.229 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:44:48.230 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:44:48.231 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+19:44:48.248 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:44:48.252 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:44:48.272 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:44:48.281 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:44:48.281 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:44:48.434 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:44:48.434 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:44:48.435 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:44:48.435 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:44:48.435 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:44:48.435 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:44:48.455 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:44:59.500 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27302334
+19:44:59.500 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:44:59.501 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:44:59.502 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27302334] with attributes [permitAll]
+19:44:59.502 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27302334
+19:44:59.569 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27302334
+19:44:59.569 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:44:59.569 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:44:59.570 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27302334] with attributes [permitAll]
+19:44:59.570 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27302334
+19:44:59.644 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:44:59.664 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:01.827 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:45:01.828 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:01.829 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:01.829 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:45:01.829 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:45:01.841 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:01.842 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:45:01.842 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:01.843 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:01.843 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:45:01.843 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:45:01.853 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:02.665 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt23181916
+19:45:02.665 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:02.666 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:02.666 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt23181916] with attributes [permitAll]
+19:45:02.666 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt23181916
+19:45:02.690 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt23181916
+19:45:02.691 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:02.692 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:02.692 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt23181916] with attributes [permitAll]
+19:45:02.692 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt23181916
+19:45:02.695 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:02.717 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:06.496 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:45:06.497 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:06.498 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:06.499 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:45:06.499 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:45:06.514 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:06.515 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:45:06.515 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:06.515 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:06.515 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:45:06.515 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:45:06.526 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:08.161 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt29079047
+19:45:08.161 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:08.162 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:08.163 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt29079047] with attributes [permitAll]
+19:45:08.163 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt29079047
+19:45:08.185 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:08.185 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt29079047
+19:45:08.186 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:08.186 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:08.187 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt29079047] with attributes [permitAll]
+19:45:08.187 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt29079047
+19:45:08.208 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:10.022 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:45:10.022 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:10.023 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:10.023 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:45:10.023 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:45:10.035 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:10.035 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:45:10.035 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:10.035 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:10.036 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:45:10.036 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:45:10.048 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:12.413 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt15464490
+19:45:12.413 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:12.414 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:12.414 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt15464490] with attributes [permitAll]
+19:45:12.414 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt15464490
+19:45:12.436 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt15464490
+19:45:12.436 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:12.437 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:12.438 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt15464490] with attributes [permitAll]
+19:45:12.438 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt15464490
+19:45:12.441 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:12.463 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:45:57.024 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt10864918
+19:45:57.024 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:45:57.025 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:45:57.026 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt10864918] with attributes [permitAll]
+19:45:57.026 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt10864918
+19:45:57.053 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:13.431 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:46:13.431 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:13.432 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:13.432 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:46:13.432 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:46:13.442 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:13.443 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:46:13.443 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:13.444 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:13.444 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:46:13.445 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:46:13.454 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:20.493 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt21741952
+19:46:20.493 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:20.494 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:20.494 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt21741952] with attributes [permitAll]
+19:46:20.494 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt21741952
+19:46:20.514 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt21741952
+19:46:20.514 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:20.515 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:20.515 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt21741952] with attributes [permitAll]
+19:46:20.515 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt21741952
+19:46:20.560 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:20.578 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:33.656 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:46:33.656 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:33.657 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:33.657 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:46:33.657 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:46:33.669 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:33.669 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:46:33.670 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:33.670 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:33.671 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:46:33.671 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:46:33.681 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:47.708 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt17737544
+19:46:47.708 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:47.708 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:47.708 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt17737544] with attributes [permitAll]
+19:46:47.709 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt17737544
+19:46:47.728 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt17737544
+19:46:47.729 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:47.729 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:47.729 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt17737544] with attributes [permitAll]
+19:46:47.729 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt17737544
+19:46:47.733 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:47.752 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:46:57.489 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt14864146
+19:46:57.489 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:46:57.490 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:46:57.490 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt14864146] with attributes [permitAll]
+19:46:57.490 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt14864146
+19:46:57.547 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:47:12.533 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt14045014
+19:47:12.533 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:47:12.534 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:47:12.534 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt14045014] with attributes [permitAll]
+19:47:12.534 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt14045014
+19:47:12.586 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:48:01.933 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:48:01.933 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:48:01.934 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:48:01.934 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:48:01.934 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:48:01.945 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:48:01.946 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:48:01.946 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:48:01.947 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:48:01.947 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:48:01.947 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:48:01.958 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:48:43.261 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27250675
+19:48:43.261 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:48:43.262 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:48:43.262 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27250675] with attributes [permitAll]
+19:48:43.262 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27250675
+19:48:43.284 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/similar/tt27250675
+19:48:43.285 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:48:43.285 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:48:43.285 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/similar/tt27250675] with attributes [permitAll]
+19:48:43.285 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/similar/tt27250675
+19:48:43.343 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:48:43.363 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:51:10.510 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:51:10.512 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:51:10.514 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:51:14.191 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 6968 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+19:51:14.194 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+19:51:14.251 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+19:51:14.251 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+19:51:14.831 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:51:14.883 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+19:51:15.481 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:51:15.490 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:51:15.491 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:51:15.491 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+19:51:15.576 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:51:15.576 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1324 ms
+19:51:15.607 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:51:15.806 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:51:15.817 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+19:51:16.023 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:51:16.111 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+19:51:16.338 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+19:51:16.493 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+19:51:17.327 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:51:17.336 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:51:18.235 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:51:18.282 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 87b04902-1354-4bb1-b57d-06b6cc38c467
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+19:51:18.401 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+19:51:18.425 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+19:51:18.426 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+19:51:18.426 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+19:51:18.426 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+19:51:18.426 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+19:51:18.426 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+19:51:18.434 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72e82add, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a88c48, org.springframework.security.web.context.SecurityContextPersistenceFilter@48062942, org.springframework.security.web.header.HeaderWriterFilter@1622186d, org.springframework.web.filter.CorsFilter@56f40891, org.springframework.security.web.authentication.logout.LogoutFilter@2ed72453, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@169d3555, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4722890, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@334736b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a4cc6, org.springframework.security.web.session.SessionManagementFilter@2dac5704, org.springframework.security.web.access.ExceptionTranslationFilter@3802ee22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@135f7ebe]
+19:51:18.783 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+19:51:18.806 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:51:18.825 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:51:18.838 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 5.004 seconds (JVM running for 5.703)
+19:51:21.570 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:51:21.570 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:51:21.571 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+19:51:21.580 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:51:21.585 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:51:21.612 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:51:21.619 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:51:21.620 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:51:21.790 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:51:21.790 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /movies/year
+19:51:21.790 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+19:51:21.791 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+19:51:21.791 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /movies/year] with attributes [permitAll]
+19:51:21.791 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /movies/year
+19:51:21.814 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+19:54:09.989 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19:54:09.992 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:54:09.995 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -27,6 +27,12 @@ public class MovieController {
         return ResponseEntity.ok(searchedMovie);
     }
 
+    @GetMapping("/year")
+    public ResponseEntity<List<MovieEntity>> filterMoviesByYear(){
+        var searchedMovie = movieService.filterMoviesByYear();
+        return ResponseEntity.ok(searchedMovie);
+    }
+
     @GetMapping("/similar/{imdbID}")
     public ResponseEntity<List<MovieEntity>> getMovie(@PathVariable String imdbID){
         var searchedMovie = movieService.getRecommendedMovies(imdbID);
