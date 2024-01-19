@@ -27,6 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.criteria.CriteriaBuilder;
 
 /**
  * Service class for managing movies.
@@ -275,55 +276,52 @@ public class MovieService {
     }
 
 
-    public ResponseMovieDTO saveFavouriteMovie(String imdbID, String username){
-        var user = userService.findByUsername(username);
+    public void saveFavouriteMovie(String imdbID, Integer userId){
+        logger.info("fav movie: " + imdbID);
+        var user = userService.findByUserId(userId);
         if(user == null){
-            throw new UserService.UserNotFoundException(username);
+            throw new UserService.UserNotFoundException(userId);
         }
 
         MovieEntity savedMovie = findByImdbID(imdbID);
+        logger.info("Saved movie: " + savedMovie);
         if(user.getLstMovie() == null){
             user.setLstMovie(new ArrayList<>());
         }
         user.getLstMovie().add(savedMovie);
         userService.save(user);
-
-        return modelMapper.map(savedMovie, ResponseMovieDTO.class);
     }
 
     /**
      * Retrieves all favourite movies for a user.
      *
-     * @param username The username of the user.
+     * @param userId The userId of the user.
      * @return A list of the user's favourite movies.
      */
-    public List<ResponseMovieDTO> getFavouriteMovie(String username){
-        var user = userService.findByUsername(username);
+    public List<MovieEntity> getFavouriteMovie(Integer userId){
+        var user = userService.findByUserId(userId);
         if(user == null){
-            throw new UserService.UserNotFoundException(username);
+            throw new UserService.UserNotFoundException(userId);
         }
 
-        List<MovieEntity> lstMovies = user.getLstMovie();
-        List<ResponseMovieDTO> responseMovieDTOList = new ArrayList<>();
-        for(MovieEntity movie : lstMovies){
-            responseMovieDTOList.add(modelMapper.map(movie, ResponseMovieDTO.class));
-        }
-        return responseMovieDTOList;
+        return user.getLstMovie();
     }
 
     /**
      * Deletes a favourite movie for a user.
      *
-     * @param username The username of the user.
+     * @param userId The userId of the user.
      * @param imdbID   The IMDb ID of the movie.
      */
-    public void deleteFavouriteMovie(String username, String imdbID){
-        var user = userService.findByUsername(username);
+    public void deleteFavouriteMovie(Integer userId, String imdbID){
+        logger.info("delete movie: " + imdbID);
+        var user = userService.findByUserId(userId);
         if(user == null){
-            throw new UserService.UserNotFoundException(username);
+            throw new UserService.UserNotFoundException(userId);
         }
 
         List<MovieEntity> lstMovies = user.getLstMovie();
+        logger.info("lstMovies: " + lstMovies);
         for(MovieEntity movie : lstMovies){
             if(movie.getImdbID().equals(imdbID)){
                 lstMovies.remove(movie);

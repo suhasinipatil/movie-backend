@@ -32,7 +32,9 @@ public class APIDataFetcherService {
     public APIDataFetcherService(MovieService movieService) {
         this.movieService = movieService;
         List<String> permutations = generatePermutations();
-        iterator = permutations.iterator();
+        String lastPermutation = PermutationTracker.readLastPermutation();
+        int startIndex = lastPermutation != null ? permutations.indexOf(lastPermutation) + 1 : 0;
+        iterator = permutations.listIterator(startIndex);
     }
 
     /**
@@ -61,6 +63,8 @@ public class APIDataFetcherService {
                     movieService.saveMovie(movie);
                     logger.info("Saved movie: " + movie.getTitle());
                 }
+                // Save the last permutation that was used
+                PermutationTracker.writeLastPermutation(next);
             }
         } catch (Exception e) {
             logger.warning("Error fetching data from API: " + e.getMessage());

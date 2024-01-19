@@ -41,22 +41,22 @@ public class MovieController {
 
     //save favourite movie
     @PostMapping("/favourite/{imdbID}")
-    public ResponseEntity<ResponseMovieDTO> saveFavouriteMovie(@PathVariable String imdbID, @AuthenticationPrincipal String username){
-        var savedMovie = movieService.saveFavouriteMovie(imdbID, username);
-        return ResponseEntity.ok(savedMovie);
+    public ResponseEntity<String> saveFavouriteMovie(@PathVariable String imdbID, @AuthenticationPrincipal Integer userId){
+        movieService.saveFavouriteMovie(imdbID, userId);
+        return ResponseEntity.ok().body("Movie saved successfully");
     }
 
     //get favourite movie
-    @GetMapping("/favourite/{username}")
-    public ResponseEntity<List<ResponseMovieDTO>> getFavouriteMovie(@PathVariable String username){
-        var savedMovie = movieService.getFavouriteMovie(username);
+    @GetMapping("/favourite")
+    public ResponseEntity<List<MovieEntity>> getFavouriteMovie(@AuthenticationPrincipal Integer userId){
+        var savedMovie = movieService.getFavouriteMovie(userId);
         return ResponseEntity.ok(savedMovie);
     }
 
     //delete favourite movie
-    @DeleteMapping("/favourite/{username}/{imdbID}")
-    public ResponseEntity<String> deleteFavouriteMovie(@PathVariable String username, @PathVariable String imdbID){
-        movieService.deleteFavouriteMovie(username, imdbID);
+    @DeleteMapping("/favourite/{imdbID}")
+    public ResponseEntity<String> deleteFavouriteMovie(@AuthenticationPrincipal Integer userId, @PathVariable String imdbID){
+        movieService.deleteFavouriteMovie(userId, imdbID);
         return ResponseEntity.ok().body("Movie deleted successfully");
     }
 

@@ -81,6 +81,15 @@ public class UserService {
         return userResponseDTO;
     }
 
+    public UserEntity findByUserId(Integer userId){
+        var userEntity = userRepository.findByUserId(userId);
+        if(userEntity == null){
+            throw new UserNotFoundException(userId);
+        }
+        return userEntity;
+    }
+
+
     /**
      * This method is used to find a user by their username.
      * If the user does not exist, it throws a UserNotFoundException.
