@@ -1,5 +1,8 @@
 package com.example.moviebackend.security.jwt;
 
+import com.example.moviebackend.movie.MovieService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -15,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class JWTAuthenticationFilter extends AuthenticationFilter {
 
+    private static final Logger logger = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
+
     /**
      * Constructor for the JWTAuthenticationFilter class.
      * It sets a custom AuthenticationManager and AuthenticationConverter.
@@ -26,6 +31,8 @@ public class JWTAuthenticationFilter extends AuthenticationFilter {
         setSuccessHandler(((request, response, authentication) -> {
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }));
+
+        logger.info("JWTAuthenticationFilter initialized");
     }
 
     /**

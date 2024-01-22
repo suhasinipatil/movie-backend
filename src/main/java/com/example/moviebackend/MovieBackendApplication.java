@@ -9,7 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-//@EnableScheduling // Enables the use of @Scheduled annotations
+@EnableScheduling // Enables the use of @Scheduled annotations
 public class MovieBackendApplication {
 
     public static void main(String[] args) {

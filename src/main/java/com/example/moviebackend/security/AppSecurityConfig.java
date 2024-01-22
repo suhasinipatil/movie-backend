@@ -13,6 +13,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * This class is responsible for the security configuration of the application.
@@ -51,9 +52,9 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("*")); // Allow all origins or customize as per your need
+        configuration.setAllowedOrigins(List.of("*")); // Allow all origins or customize as per your need
         configuration.setAllowedMethods(Arrays.asList("GET","POST", "PUT", "DELETE")); // Allow specific http methods, for instance GET, POST, etc.
-        configuration.setAllowedHeaders(Arrays.asList("*")); // Allow all headers or you can specify what headers are allowed
+        configuration.setAllowedHeaders(List.of("*")); // Allow all headers, or you can specify what headers are allowed
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;

@@ -1,36 +1,11 @@
 package com.example.moviebackend.movie;
 
-import com.example.moviebackend.common.BaseEntity;
-import com.example.moviebackend.user.UserEntity;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.persistence.*;
-
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import javax.persistence.*;
 import java.util.List;
-
-/*@JsonIgnoreProperties(ignoreUnknown = true)
-public class MovieEntity extends BaseEntity {
-    @JsonProperty("Title")
-    String title;
-    @JsonProperty("Plot")
-    String Plot;
-    @JsonProperty("Released")
-    String releasedDate;
-    @JsonProperty("imdbRating")
-    Double imdbRating;
-    @JsonProperty("imdbID")
-    String imdbID;
-}*/
-
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 @Entity(name = "movies")
 @Getter
 @Setter

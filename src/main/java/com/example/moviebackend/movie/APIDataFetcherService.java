@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
@@ -22,7 +19,7 @@ public class APIDataFetcherService {
     private static final Logger logger = Logger.getLogger(APIDataFetcherService.class.getName());
     private final MovieService movieService;
 
-    private Iterator<String> iterator;
+    private final Iterator<String> iterator;
 
     /**
      * Constructs a new APIDataFetcherService with the given MovieService.
@@ -33,8 +30,10 @@ public class APIDataFetcherService {
         this.movieService = movieService;
         List<String> permutations = generatePermutations();
         String lastPermutation = PermutationTracker.readLastPermutation();
+        logger.info("Last permutation used: " + lastPermutation);
         int startIndex = lastPermutation != null ? permutations.indexOf(lastPermutation) + 1 : 0;
         iterator = permutations.listIterator(startIndex);
+        logger.info("Starting from permutation: " + permutations.get(startIndex));
     }
 
     /**
@@ -81,6 +80,7 @@ public class APIDataFetcherService {
         List<String> permutations = new ArrayList<>();
 
         // Generate all possible permutations
+        logger.info("Generating permutations...");
         for(int i = 0; i < Math.pow(totalCharacters, wordLength); i++){
             StringBuilder permutation = new StringBuilder();
             int temp = i;
@@ -94,6 +94,7 @@ public class APIDataFetcherService {
 
             permutations.add(permutation.toString());
         }
+        logger.info("Generated " + permutations.size() + " permutations");
 
         return permutations;
     }

@@ -1,5 +1,6 @@
 package com.example.moviebackend.user;
 
+import com.example.moviebackend.movie.MovieService;
 import com.example.moviebackend.security.jwt.JWTService;
 import com.example.moviebackend.user.dto.CreateUserDTO;
 import com.example.moviebackend.user.dto.UserResponseDTO;
@@ -18,6 +19,7 @@ import javax.transaction.Transactional;
 @Service
 public class UserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
     public final UserRepository userRepository;
     public final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
@@ -122,10 +124,13 @@ public class UserService {
     public static class UserNotFoundException extends IllegalArgumentException{
         public UserNotFoundException(Integer userId) {
             super("User with id " + userId + " is not found");
+            logger.info("User with id " + userId + " is not found");
+
         }
 
         public UserNotFoundException(String username) {
             super("User with username " + username + " not found");
+            logger.info("User with username " + username + " not found");
         }
     }
 
@@ -134,7 +139,9 @@ public class UserService {
      */
     public static class UserAlreadyExitsException extends IllegalArgumentException{
         public UserAlreadyExitsException(String username) {
+
             super("User already exits for " + username);
+            logger.info("User already exits for " + username);
         }
     }
 }

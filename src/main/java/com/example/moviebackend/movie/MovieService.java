@@ -1,7 +1,5 @@
 package com.example.moviebackend.movie;
 
-import com.example.moviebackend.movie.dto.FavouriteMovieDTO;
-import com.example.moviebackend.movie.dto.ResponseMovieDTO;
 import com.example.moviebackend.user.UserService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,23 +9,15 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import javax.persistence.criteria.CriteriaBuilder;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Service class for managing movies.
@@ -37,8 +27,6 @@ public class MovieService {
 
     private static final Logger logger = LoggerFactory.getLogger(MovieService.class);
     private static final ObjectMapper objectMapper = new ObjectMapper();
-
-    private final ModelMapper modelMapper;
 
     private final MovieRepository movieRepository;
 
@@ -59,12 +47,10 @@ public class MovieService {
     /**
      * Constructor for MovieService.
      *
-     * @param modelMapper     The ModelMapper instance for mapping between DTOs and entities.
      * @param movieRepository The repository for accessing movie data.
      * @param userService     The service for managing users.
      */
-    public MovieService(ModelMapper modelMapper, MovieRepository movieRepository, UserService userService){
-        this.modelMapper = modelMapper;
+    public MovieService(MovieRepository movieRepository, UserService userService){
         this.movieRepository = movieRepository;
         this.userService = userService;
     }
@@ -80,6 +66,7 @@ public class MovieService {
             throw new MovieNotFoundException(imdbID);
         }
 
+        logger.info("MovieEntity: " + movieEntity);
         List<MovieEntity> recommendedMovies = new ArrayList<>();
         List<MovieEntity> allMovies = movieRepository.findAll();
         String genre = movieEntity.getGenre();
@@ -89,26 +76,15 @@ public class MovieService {
         String writer = movieEntity.getWriter();
         String language = movieEntity.getLanguage();
         String actors = movieEntity.getActors();
+        logger.info("imdbRating: " + imdbRating + " genre: " + genre + " director: " + director + " writer: " + writer + " language: " + language + " actors: " + actors);
 
         float lowerBound = imdbRating - 2.0f; // 2 less than the current movie's rating
         float upperBound = imdbRating + 2.0f; // 2 more than the current movie's rating
 
-       /* for(MovieEntity movie : allMovies){
-            String movieImdbRatingStr = movie.getImdbRating();
-            float movieImdbRating = "N/A".equals(movieImdbRatingStr) ? -1.0f : Float.parseFloat(movieImdbRatingStr);
-            if((!"N/A".equals(genre) && movie.getGenre().contains(genre))
-                    && (!"N/A".equals(director) && movie.getDirector().contains(director))
-                    && (!"N/A".equals(writer) && movie.getWriter().contains(writer))
-                    && (!"N/A".equals(language) && movie.getLanguage().contains(language))
-                    && (!"N/A".equals(actors) && movie.getActors().contains(actors))
-                    && (imdbRating != -1.0f && movieImdbRating >= lowerBound && movieImdbRating <= upperBound)){
-                recommendedMovies.add(movie);
-            }
-        }*/
-
         for(MovieEntity movie : allMovies){
             // Skip the given movie
             if(movie.getImdbID().equals(imdbID)){
+                logger.info("Skipping movie with ID " + imdbID);
                 continue;
             }
 
@@ -133,6 +109,7 @@ public class MovieService {
     // List movies of the latest year from now
     public List<MovieEntity> filterMoviesByYear(){
         int currentYear = java.time.Year.now().getValue() - 2;
+        logger.info("currentYear: " + currentYear);
         List<MovieEntity> movieEntities = movieRepository.findByYear(currentYear + "");
 
         // Remove movies which don't have a poster
@@ -188,7 +165,6 @@ public class MovieService {
                 allMovies.addAll(movies.getSearch());
                 logger.info("API URL: " + url);
                 logger.info("Fetched " + allMovies.size() + " movies");
-                logger.info("Total results: " + movies.getTotalResults());
                 // If the total results is more than the size of the search list, increment the page number and continue fetching
                 if (Integer.parseInt(movies.getTotalResults()) > allMovies.size()) {
                     page++;
@@ -197,6 +173,7 @@ public class MovieService {
                 }
 
             } catch (Exception e) {
+                logger.error("Error fetching movie with ID " + title, e);
                 throw new RuntimeException(e);
             } finally {
                 request.releaseConnection();
@@ -244,6 +221,7 @@ public class MovieService {
                 movies.add(movieEntity);
 
             } catch (Exception e) {
+                logger.error("Error fetching movie with ID " + imdbID, e);
                 throw new RuntimeException(e);
             } finally {
                 request.releaseConnection();
@@ -336,6 +314,7 @@ public class MovieService {
     public static class MovieNotFoundException extends RuntimeException {
         public MovieNotFoundException(String imdbID) {
             super("Could not find movie with ID " + imdbID);
+            logger.error("Could not find movie with ID " + imdbID);
         }
     }
 

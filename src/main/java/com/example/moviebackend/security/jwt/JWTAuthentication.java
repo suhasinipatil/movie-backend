@@ -12,7 +12,7 @@ import java.util.Collection;
  */
 public class JWTAuthentication implements Authentication {
 
-    private  String token;
+    private final String token;
     private Integer userId;
 
     /**
@@ -94,7 +94,7 @@ public class JWTAuthentication implements Authentication {
      * In this implementation, it does nothing.
      *
      * @param isAuthenticated boolean
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException if an error occurs
      */
     @Override
     public void setAuthenticated(boolean isAuthenticated) throws IllegalArgumentException {
