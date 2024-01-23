@@ -157,7 +157,14 @@ public class MovieService {
                 // Check if the response contains an error message
                 JsonNode responseJson = objectMapper.readTree(responseString);
                 if (responseJson.has("Error")) {
-                    logger.error("Error fetching movie with ID " + title + ": " + responseJson.get("Error").asText());
+                    String errorMessage = responseJson.get("Error").asText();
+                    if("Request limit reached!".equals(errorMessage)){
+                        logger.error("API request limit reached!");
+                        throw new RequestLimitReachedException();
+                    }
+                    else {
+                        logger.error("Error fetching movie with ID " + title + ": " + responseJson.get("Error").asText());
+                    }
                     break;
                 }
                 MovieAPIResponse movies = objectMapper.readValue(responseString, MovieAPIResponse.class);
@@ -210,6 +217,19 @@ public class MovieService {
                 HttpResponse response = client.execute(request);
                 HttpEntity entity = response.getEntity();
                 String responseString = EntityUtils.toString(entity, "UTF-8");
+
+                JsonNode responseJson = objectMapper.readTree(responseString);
+                if (responseJson.has("Error")){
+                    String errorMessage = responseJson.get("Error").asText();
+                    if("Request limit reached!".equals(errorMessage)){
+                        logger.error("API request limit reached!");
+                        throw new RequestLimitReachedException();
+                    }
+                    else {
+                        logger.error("Error fetching movie with ID " + imdbID + ": " + errorMessage);
+                    }
+                }
+
                 var movieEntity = objectMapper.readValue(responseString, MovieEntity.class);
                 //convert move runtime into h and minutes
                 if(movieEntity.getRuntime().contains("N/A")){
@@ -247,9 +267,6 @@ public class MovieService {
 
     public MovieEntity findByImdbID(String imdbID){
         MovieEntity movieEntity = movieRepository.findByImdbID(imdbID).orElse(null);
-        if(movieEntity == null){
-            throw new MovieNotFoundException(imdbID);
-        }
         return movieEntity;
     }
 
@@ -318,4 +335,10 @@ public class MovieService {
         }
     }
 
+    public static class RequestLimitReachedException extends RuntimeException {
+        public RequestLimitReachedException() {
+            super("API request limit reached!");
+            logger.error("API request limit reached!");
+        }
+    }
 }

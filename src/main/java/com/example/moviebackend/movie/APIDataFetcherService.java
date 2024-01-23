@@ -1,11 +1,17 @@
 package com.example.moviebackend.movie;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
@@ -17,9 +23,15 @@ import java.util.logging.Logger;
 public class APIDataFetcherService {
 
     private static final Logger logger = Logger.getLogger(APIDataFetcherService.class.getName());
-    private final MovieService movieService;
+
+    @Autowired
+    private MovieService movieService;
 
     private final Iterator<String> iterator;
+
+    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    private ScheduledFuture<?> scheduledFuture;
+
 
     /**
      * Constructs a new APIDataFetcherService with the given MovieService.
@@ -35,14 +47,13 @@ public class APIDataFetcherService {
         iterator = permutations.listIterator(startIndex);
         logger.info("Starting from permutation: " + permutations.get(startIndex));
     }
+    @PostConstruct
+    public void startFetching() {
+        int fetchInterval = 1; // replace with your fetch interval
+        this.scheduledFuture = this.scheduler.scheduleAtFixedRate(this::fetchData, 0, fetchInterval, TimeUnit.MINUTES);
+    }
 
-    /**
-     * Starts fetching movie data from an API using the given permutations.
-     * The data is fetched at fixed intervals using a ScheduledExecutorService.
-     * The data is saved to a database using the MovieService.
-     */
-    @Scheduled(fixedRateString = "${fetch.interval}")
-    public void startFetching(){
+    private void fetchData() {
         logger.info("Fetching data from API...");
 
         try {
@@ -65,10 +76,14 @@ public class APIDataFetcherService {
                 // Save the last permutation that was used
                 PermutationTracker.writeLastPermutation(next);
             }
+        } catch (MovieService.RequestLimitReachedException e) {
+            this.scheduledFuture.cancel(false); // This will stop the scheduled task
+            logger.info("Request limit reached. Stopping scheduled task.");
         } catch (Exception e) {
-            logger.warning("Error fetching data from API: " + e.getMessage());
+            logger.severe("Error fetching data from API: " + e.getMessage());
         }
     }
+
     /**
      * Generates all possible permutations of a given length using the English alphabet.
      *

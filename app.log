@@ -11108,3 +11108,510 @@ com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized f
 21:39:48.926 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 21:39:48.932 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 21:39:48.936 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:49:46.583 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 6316 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+12:49:46.738 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:49:46.798 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+12:49:46.798 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+12:49:47.695 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:49:47.764 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+12:49:48.462 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:49:48.470 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:49:48.471 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:49:48.471 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+12:49:48.553 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:49:48.553 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1754 ms
+12:49:48.587 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:49:48.832 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:49:48.843 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+12:49:49.043 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:49:49.117 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+12:49:49.356 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+12:49:49.533 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+12:49:50.416 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:49:50.425 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:49:51.125 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Generating permutations...
+12:49:51.132 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Generated 17576 permutations
+12:49:51.134 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Last permutation used: anb
+12:49:51.135 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Starting from permutation: anc
+12:49:51.196 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+12:49:51.234 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 2d2688bf-af27-4dcf-8f92-9f202b0bb13d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+12:49:51.308 [restartedMain] INFO  c.e.m.s.jwt.JWTAuthenticationFilter - JWTAuthenticationFilter initialized
+12:49:51.364 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+12:49:51.396 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+12:49:51.396 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+12:49:51.397 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+12:49:51.397 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+12:49:51.397 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+12:49:51.397 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+12:49:51.409 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ff21040, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2aef3e3e, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e9481f0, org.springframework.security.web.header.HeaderWriterFilter@5908e776, org.springframework.web.filter.CorsFilter@53abacdc, org.springframework.security.web.authentication.logout.LogoutFilter@69be2dd5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@395c7d2e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41d974d6, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@5cd0a116, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33cfdadc, org.springframework.security.web.session.SessionManagementFilter@6c6db20d, org.springframework.security.web.access.ExceptionTranslationFilter@48e8605b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a94cf6b]
+12:49:51.809 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:49:51.832 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:49:51.851 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:49:51.862 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+12:49:51.862 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: anc
+12:49:51.868 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 5.795 seconds (JVM running for 6.689)
+12:49:52.463 [scheduling-1] ERROR c.e.moviebackend.movie.MovieService - Error fetching movie with ID anc: Request limit reached!
+12:49:52.463 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetched 0 movies
+12:50:51.875 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+12:50:51.875 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: and
+12:50:52.395 [scheduling-1] ERROR c.e.moviebackend.movie.MovieService - Error fetching movie with ID and: Request limit reached!
+12:50:52.395 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetched 0 movies
+12:51:51.875 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+12:51:51.875 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: ane
+12:51:52.405 [scheduling-1] ERROR c.e.moviebackend.movie.MovieService - Error fetching movie with ID ane: Request limit reached!
+12:51:52.405 [scheduling-1] INFO  c.e.m.movie.APIDataFetcherService - Fetched 0 movies
+12:51:56.304 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:51:56.308 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:51:56.312 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:47:39.750 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 9228 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+15:47:39.754 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+15:47:39.855 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:47:39.856 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:47:41.116 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:47:41.226 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 2 JPA repository interfaces.
+15:47:42.613 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:47:42.643 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:47:42.645 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:47:42.645 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+15:47:42.842 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:47:42.842 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2985 ms
+15:47:42.926 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:47:43.387 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:47:43.420 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+15:47:43.746 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:47:43.850 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+15:47:44.308 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:47:44.572 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+15:47:46.496 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:47:46.512 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:47:48.122 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:47:48.214 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 63fb52c4-69ce-46e9-8ba9-d18a3c10a805
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+15:47:52.646 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 18344 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+15:47:52.652 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+15:47:52.743 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:47:52.744 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:47:54.294 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:47:54.470 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 149 ms. Found 2 JPA repository interfaces.
+15:47:56.243 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:47:56.283 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:47:56.284 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:47:56.285 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+15:47:56.585 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:47:56.586 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3840 ms
+15:47:56.672 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:47:57.063 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:47:57.100 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+15:47:57.480 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:47:57.598 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+15:47:58.090 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:47:58.435 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+15:48:00.425 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:48:00.445 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:48:02.208 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Generating permutations...
+15:48:02.242 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Generated 17576 permutations
+15:48:02.257 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Last permutation used: ane
+15:48:02.258 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Starting from permutation: anf
+15:48:02.264 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+15:48:02.264 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: anf
+15:48:02.409 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:48:02.530 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7f620221-fd00-48dc-9041-1c94d1767ff4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+15:48:02.712 [restartedMain] INFO  c.e.m.s.jwt.JWTAuthenticationFilter - JWTAuthenticationFilter initialized
+15:48:02.816 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+15:48:02.860 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+15:48:02.861 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+15:48:02.861 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+15:48:02.861 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+15:48:02.861 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+15:48:02.862 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+15:48:02.871 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=anf&page=1
+15:48:02.872 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1 movies
+15:48:02.880 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2d036e4a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fd12309, org.springframework.security.web.context.SecurityContextPersistenceFilter@401d171f, org.springframework.security.web.header.HeaderWriterFilter@13e706fe, org.springframework.web.filter.CorsFilter@6e8e608e, org.springframework.security.web.authentication.logout.LogoutFilter@7fba2da6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49a24285, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b36e180, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@1a22a00d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ce5ec3d, org.springframework.security.web.session.SessionManagementFilter@2f168664, org.springframework.security.web.access.ExceptionTranslationFilter@334d4083, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5efd5226]
+15:48:03.828 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:48:03.884 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:48:03.969 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:48:04.047 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 12.246 seconds (JVM running for 13.744)
+15:48:06.027 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetched 1 movies
+15:48:06.186 [pool-1-thread-1] ERROR c.e.moviebackend.movie.MovieService - Could not find movie with ID tt5644404
+15:48:06.187 [pool-1-thread-1] ERROR c.e.m.movie.APIDataFetcherService - Error fetching data from API: Could not find movie with ID tt5644404
+15:49:02.265 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+15:49:02.265 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: ang
+15:49:02.885 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=1
+15:49:02.885 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+15:49:03.457 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=2
+15:49:03.457 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+15:49:03.813 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=3
+15:49:03.813 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+15:49:04.428 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=4
+15:49:04.429 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+15:49:05.209 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=5
+15:49:05.210 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 50 movies
+15:49:05.511 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=6
+15:49:05.512 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 60 movies
+15:49:06.108 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=7
+15:49:06.108 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 70 movies
+15:49:06.518 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=8
+15:49:06.519 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 80 movies
+15:49:07.136 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=9
+15:49:07.136 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 90 movies
+15:49:07.541 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=10
+15:49:07.541 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 100 movies
+15:49:08.158 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=11
+15:49:08.159 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 110 movies
+15:49:08.586 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=12
+15:49:08.586 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 120 movies
+15:49:09.169 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=13
+15:49:09.170 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 130 movies
+15:49:09.491 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=14
+15:49:09.491 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 140 movies
+15:49:09.866 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=15
+15:49:09.867 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 150 movies
+15:49:10.232 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=16
+15:49:10.233 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 160 movies
+15:49:10.704 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=17
+15:49:10.704 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 170 movies
+15:49:11.130 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=18
+15:49:11.130 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 180 movies
+15:49:11.642 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=19
+15:49:11.642 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 190 movies
+15:49:11.978 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=20
+15:49:11.978 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 200 movies
+15:49:12.368 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=21
+15:49:12.369 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 210 movies
+15:49:12.765 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=22
+15:49:12.765 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 220 movies
+15:49:13.141 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=23
+15:49:13.142 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 230 movies
+15:49:13.461 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=24
+15:49:13.462 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 240 movies
+15:49:13.812 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=25
+15:49:13.812 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 250 movies
+15:49:14.198 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=26
+15:49:14.199 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 260 movies
+15:49:14.508 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=27
+15:49:14.509 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 270 movies
+15:49:14.916 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=28
+15:49:14.917 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 280 movies
+15:49:15.324 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=29
+15:49:15.325 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 290 movies
+15:49:15.738 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=30
+15:49:15.738 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 300 movies
+15:49:16.084 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=31
+15:49:16.084 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 310 movies
+15:49:16.462 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=32
+15:49:16.462 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 320 movies
+15:49:17.037 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=33
+15:49:17.038 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 330 movies
+15:49:17.377 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=34
+15:49:17.377 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 340 movies
+15:49:17.755 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=35
+15:49:17.756 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 350 movies
+15:49:18.095 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=36
+15:49:18.095 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 360 movies
+15:49:18.503 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=37
+15:49:18.503 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 370 movies
+15:49:18.809 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=38
+15:49:18.809 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 380 movies
+15:49:19.132 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=39
+15:49:19.132 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 390 movies
+15:49:19.522 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=40
+15:49:19.522 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 400 movies
+15:49:19.934 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=41
+15:49:19.934 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 410 movies
+15:49:20.446 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=42
+15:49:20.446 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 420 movies
+15:49:20.852 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=43
+15:49:20.853 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 430 movies
+15:49:21.202 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=44
+15:49:21.203 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 440 movies
+15:49:21.518 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=45
+15:49:21.519 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 450 movies
+15:49:21.823 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=46
+15:49:21.823 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 460 movies
+15:49:22.199 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=47
+15:49:22.199 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 470 movies
+15:49:22.605 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=48
+15:49:22.605 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 480 movies
+15:49:23.005 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=49
+15:49:23.005 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 490 movies
+15:49:23.326 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=50
+15:49:23.326 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 500 movies
+15:49:23.652 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=51
+15:49:23.652 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 510 movies
+15:49:23.982 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=52
+15:49:23.983 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 520 movies
+15:49:24.348 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=53
+15:49:24.349 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 530 movies
+15:49:24.684 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=54
+15:49:24.685 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 540 movies
+15:49:25.058 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=55
+15:49:25.059 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 550 movies
+15:49:25.395 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=56
+15:49:25.396 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 560 movies
+15:49:25.770 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=57
+15:49:25.771 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 570 movies
+15:49:26.182 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=58
+15:49:26.182 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 580 movies
+15:49:26.589 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=59
+15:49:26.590 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 590 movies
+15:49:26.997 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=60
+15:49:26.997 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 600 movies
+15:49:27.324 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=61
+15:49:27.325 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 610 movies
+15:49:27.919 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=62
+15:49:27.920 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 620 movies
+15:49:28.334 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=63
+15:49:28.334 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 630 movies
+15:49:28.739 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=64
+15:49:28.740 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 640 movies
+15:49:29.251 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=65
+15:49:29.251 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 650 movies
+15:49:29.675 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=66
+15:49:29.675 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 660 movies
+15:49:30.082 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=67
+15:49:30.082 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 670 movies
+15:49:30.409 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=68
+15:49:30.409 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 680 movies
+15:49:30.727 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=69
+15:49:30.727 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 690 movies
+15:49:31.052 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=70
+15:49:31.052 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 700 movies
+15:49:31.374 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=71
+15:49:31.375 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 710 movies
+15:49:31.698 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=72
+15:49:31.699 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 720 movies
+15:49:32.015 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=73
+15:49:32.015 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 730 movies
+15:49:32.324 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=74
+15:49:32.324 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 740 movies
+15:49:32.739 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=75
+15:49:32.739 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 750 movies
+15:49:33.078 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=76
+15:49:33.078 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 760 movies
+15:49:33.387 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=77
+15:49:33.387 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 770 movies
+15:49:33.757 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=78
+15:49:33.757 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 780 movies
+15:49:34.126 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=79
+15:49:34.127 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 790 movies
+15:49:34.472 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=80
+15:49:34.472 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 800 movies
+15:49:34.930 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=81
+15:49:34.930 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 810 movies
+15:49:35.302 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=82
+15:49:35.302 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 820 movies
+15:49:35.709 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=83
+15:49:35.709 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 830 movies
+15:49:36.032 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=84
+15:49:36.032 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 840 movies
+15:49:36.425 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=85
+15:49:36.425 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 850 movies
+15:49:36.829 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=86
+15:49:36.829 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 860 movies
+15:49:37.140 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=87
+15:49:37.140 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 870 movies
+15:49:37.469 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=88
+15:49:37.469 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 880 movies
+15:49:38.364 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=89
+15:49:38.365 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 890 movies
+15:49:38.692 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=90
+15:49:38.692 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 900 movies
+15:49:39.082 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=91
+15:49:39.082 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 910 movies
+15:49:39.490 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=92
+15:49:39.490 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 920 movies
+15:49:39.872 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=93
+15:49:39.872 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 930 movies
+15:49:40.208 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=94
+15:49:40.208 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 940 movies
+15:49:40.537 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=95
+15:49:40.537 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 950 movies
+15:49:40.964 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=96
+15:49:40.964 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 960 movies
+15:49:41.437 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=97
+15:49:41.437 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 970 movies
+15:49:41.846 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=98
+15:49:41.846 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 980 movies
+15:49:42.260 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=99
+15:49:42.260 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 990 movies
+15:49:42.591 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=100
+15:49:42.591 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1000 movies
+15:49:42.907 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=101
+15:49:42.908 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1010 movies
+15:49:43.280 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=102
+15:49:43.280 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1020 movies
+15:49:43.608 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=103
+15:49:43.608 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1030 movies
+15:49:43.996 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=104
+15:49:43.997 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1040 movies
+15:49:44.406 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=105
+15:49:44.406 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1050 movies
+15:49:44.728 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=106
+15:49:44.728 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1060 movies
+15:49:45.082 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=107
+15:49:45.082 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1070 movies
+15:49:45.458 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=108
+15:49:45.458 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1080 movies
+15:49:45.852 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=109
+15:49:45.852 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1090 movies
+15:49:46.258 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=110
+15:49:46.259 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1100 movies
+15:49:46.660 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=111
+15:49:46.660 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1110 movies
+15:49:47.073 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=112
+15:49:47.073 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1120 movies
+15:49:47.536 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=113
+15:49:47.536 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1123 movies
+15:53:26.013 [pool-1-thread-1] ERROR c.e.moviebackend.movie.MovieService - Error fetching movie with ID tt15558054
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:4622)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3042)
+	at com.example.moviebackend.movie.MovieService.getMoviesList(MovieService.java:221)
+	at com.example.moviebackend.movie.APIDataFetcherService.fetchData(APIDataFetcherService.java:65)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:305)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+15:55:17.955 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m20s692ms533µs200ns).
+15:55:17.960 [pool-1-thread-1] ERROR c.e.m.movie.APIDataFetcherService - Error fetching data from API: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+15:55:17.960 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+15:55:17.960 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: anh
+15:55:18.500 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=anh&page=1
+15:55:18.500 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+15:55:19.156 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=anh&page=2
+15:55:19.156 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+15:55:19.780 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=anh&page=3
+15:55:19.780 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 23 movies
+16:00:40.904 [pool-1-thread-1] ERROR c.e.moviebackend.movie.MovieService - Error fetching movie with ID tt11294366
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:4622)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3042)
+	at com.example.moviebackend.movie.MovieService.getMoviesList(MovieService.java:221)
+	at com.example.moviebackend.movie.APIDataFetcherService.fetchData(APIDataFetcherService.java:65)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:305)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+16:01:22.834 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s179ms191µs200ns).
+16:01:22.839 [pool-1-thread-1] ERROR c.e.m.movie.APIDataFetcherService - Error fetching data from API: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'error': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"error code: 524"; line: 1, column: 6]
+16:01:22.839 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+16:01:22.839 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: ani
+16:01:23.395 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=1
+16:01:23.396 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+16:01:23.958 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=2
+16:01:23.958 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 20 movies
+16:01:24.500 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=3
+16:01:24.500 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 30 movies
+16:01:24.802 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=4
+16:01:24.802 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 40 movies
+16:01:25.330 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=5
+16:01:25.331 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 50 movies
+16:01:26.043 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=6
+16:01:26.043 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 60 movies
+16:01:26.365 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=7
+16:01:26.365 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 70 movies
+16:01:27.084 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=8
+16:01:27.084 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 80 movies
+16:01:27.380 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=9
+16:01:27.380 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 90 movies
+16:01:27.697 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=10
+16:01:27.697 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 100 movies
+16:01:28.222 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ani&page=11
+16:01:28.222 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 106 movies
+16:02:15.881 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:02:15.886 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:02:15.891 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+17:43:45.795 [restartedMain] INFO  c.e.m.MovieBackendApplication - Starting MovieBackendApplication using Java 17.0.6 on DESKTOP-GTJ9E4R with PID 14744 (D:\Projects\MovieBackend\build\classes\java\main started by suhasini in D:\Projects\MovieBackend)
+17:43:45.803 [restartedMain] INFO  c.e.m.MovieBackendApplication - No active profile set, falling back to 1 default profile: "default"
+17:43:45.931 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+17:43:45.931 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+17:43:48.120 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:43:48.303 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 156 ms. Found 2 JPA repository interfaces.
+17:43:50.351 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+17:43:50.377 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:43:50.378 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:43:50.378 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+17:43:50.588 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:43:50.588 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4656 ms
+17:43:50.688 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:43:51.163 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:43:51.190 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres'
+17:43:51.578 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+17:43:51.743 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+17:43:52.274 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:43:52.665 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+17:43:54.690 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:43:54.717 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:43:56.726 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Generating permutations...
+17:43:56.755 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Generated 17576 permutations
+17:43:56.770 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Last permutation used: ane
+17:43:56.771 [restartedMain] INFO  c.e.m.movie.APIDataFetcherService - Starting from permutation: anf
+17:43:56.774 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+17:43:56.774 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: anf
+17:44:04.855 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17:44:04.966 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 058e1591-d838-4d9d-9466-f31197e8f57a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+17:44:05.165 [restartedMain] INFO  c.e.m.s.jwt.JWTAuthenticationFilter - JWTAuthenticationFilter initialized
+17:44:05.254 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/login', POST]
+17:44:05.301 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/users/**', POST]
+17:44:05.302 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', GET]
+17:44:05.303 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', POST]
+17:44:05.303 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/movies/**', DELETE]
+17:44:05.303 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/error']
+17:44:05.304 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+17:44:05.320 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4becc96b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35122da6, org.springframework.security.web.context.SecurityContextPersistenceFilter@176edcf1, org.springframework.security.web.header.HeaderWriterFilter@5a090e4a, org.springframework.web.filter.CorsFilter@119dbf92, org.springframework.security.web.authentication.logout.LogoutFilter@72bbf78, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19c2b63, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6563fece, com.example.moviebackend.security.jwt.JWTAuthenticationFilter@5fc1502e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@724b7d2c, org.springframework.security.web.session.SessionManagementFilter@69f6614c, org.springframework.security.web.access.ExceptionTranslationFilter@2502934c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ecc6835]
+17:44:06.105 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=anf&page=1
+17:44:06.109 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 1 movies
+17:44:23.162 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:44:29.411 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetched 1 movies
+17:44:34.754 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:44:34.791 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+17:44:34.822 [restartedMain] INFO  c.e.m.MovieBackendApplication - Started MovieBackendApplication in 49.909 seconds (JVM running for 51.432)
+17:44:36.242 [pool-1-thread-1] ERROR c.e.moviebackend.movie.MovieService - Could not find movie with ID tt5644404
+17:45:44.025 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m21s21ms965µs400ns).
+17:45:44.033 [pool-1-thread-1] ERROR c.e.m.movie.APIDataFetcherService - Error fetching data from API: Could not find movie with ID tt5644404
+17:45:44.035 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data from API...
+17:45:44.035 [pool-1-thread-1] INFO  c.e.m.movie.APIDataFetcherService - Fetching data using permutation: ang
+17:45:44.100 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - API URL: http://www.omdbapi.com/?apikey=43dd2ba4&s=ang&page=1
+17:45:44.100 [pool-1-thread-1] INFO  c.e.moviebackend.movie.MovieService - Fetched 10 movies
+17:45:44.164 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+17:45:44.172 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+17:45:44.188 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
