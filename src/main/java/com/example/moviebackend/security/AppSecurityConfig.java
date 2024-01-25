@@ -1,7 +1,10 @@
 package com.example.moviebackend.security;
 
 import com.example.moviebackend.security.jwt.JWTAuthenticationFilter;
+import com.example.moviebackend.user.OAuth2LoginAuthenticationSuccessHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,8 +24,11 @@ import java.util.List;
  * The configuration defines which URL paths should be secured and which should not.
  */
 @EnableWebSecurity
+@Configuration
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private OAuth2LoginAuthenticationSuccessHandler successHandler;
     /**
      * This method is used to configure the HttpSecurity.
      * It defines which requests should be authorized.
@@ -34,7 +40,11 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // Disable CSRF (Cross Site Request Forgery)
-        http.cors().and() // add this line to enable cors
+        http.oauth2Login()
+                .loginPage("/users/login")
+                .successHandler(successHandler)
+                .and().
+                cors().and() // add this line to enable cors
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/users/login").permitAll()

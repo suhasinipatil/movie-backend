@@ -1,6 +1,5 @@
 package com.example.moviebackend.user;
 
-import com.example.moviebackend.movie.MovieService;
 import com.example.moviebackend.security.jwt.JWTService;
 import com.example.moviebackend.user.dto.CreateUserDTO;
 import com.example.moviebackend.user.dto.UserResponseDTO;
@@ -10,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import java.util.Collections;
 
 /**
  * This class is responsible for managing users in the application.
@@ -24,6 +23,7 @@ public class UserService {
     public final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final JWTService jwtService;
+    private final String googleClientId = "your-google-client-id";
 
     /**
      * Constructor for the UserService class.
@@ -83,6 +83,13 @@ public class UserService {
         return userResponseDTO;
     }
 
+    /**
+     * This method is used to find a user by their id.
+     * If the user does not exist, it throws a UserNotFoundException.
+     *
+     * @param userId Integer
+     * @return UserEntity
+     */
     public UserEntity findByUserId(Integer userId){
         var userEntity = userRepository.findByUserId(userId);
         if(userEntity == null){

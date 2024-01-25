@@ -5,6 +5,8 @@ import com.example.moviebackend.user.dto.UserResponseDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -28,6 +30,11 @@ public class UserController {
     {
         var savedUser = userService.loginUser(loginUserDTO);
         return ResponseEntity.ok(savedUser);
+    }
+
+    @GetMapping("/users/login/google")
+    public void redirectToGoogleLogin(HttpServletResponse response) throws IOException{
+        response.sendRedirect("/oauth2/authorization/google");
     }
 
     @ExceptionHandler(UserService.UserNotFoundException.class)

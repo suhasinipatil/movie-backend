@@ -77,7 +77,7 @@ public class APIDataFetcherService {
                 PermutationTracker.writeLastPermutation(next);
             }
         } catch (MovieService.RequestLimitReachedException e) {
-            this.scheduledFuture.cancel(false); // This will stop the scheduled task
+            this.scheduledFuture.cancel(true); // This will stop the scheduled task
             logger.info("Request limit reached. Stopping scheduled task.");
         } catch (Exception e) {
             logger.severe("Error fetching data from API: " + e.getMessage());

@@ -179,7 +179,10 @@ public class MovieService {
                     break;
                 }
 
-            } catch (Exception e) {
+            } catch(MovieService.RequestLimitReachedException e) {
+                throw e;
+            }
+            catch (Exception e) {
                 logger.error("Error fetching movie with ID " + title, e);
                 throw new RuntimeException(e);
             } finally {
@@ -227,6 +230,7 @@ public class MovieService {
                     }
                     else {
                         logger.error("Error fetching movie with ID " + imdbID + ": " + errorMessage);
+                        continue;
                     }
                 }
 
@@ -240,7 +244,10 @@ public class MovieService {
                 movieEntity.setRuntime(convertedRuntime);
                 movies.add(movieEntity);
 
-            } catch (Exception e) {
+            } catch (MovieService.RequestLimitReachedException e) {
+                throw e;
+            }
+            catch (Exception e) {
                 logger.error("Error fetching movie with ID " + imdbID, e);
                 throw new RuntimeException(e);
             } finally {
