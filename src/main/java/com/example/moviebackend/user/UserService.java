@@ -3,13 +3,23 @@ package com.example.moviebackend.user;
 import com.example.moviebackend.security.jwt.JWTService;
 import com.example.moviebackend.user.dto.CreateUserDTO;
 import com.example.moviebackend.user.dto.UserResponseDTO;
+import net.minidev.json.JSONObject;
+import net.minidev.json.JSONValue;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.Collections;
+import javax.annotation.PostConstruct;
 
 /**
  * This class is responsible for managing users in the application.
@@ -23,7 +33,22 @@ public class UserService {
     public final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final JWTService jwtService;
-    private final String googleClientId = "your-google-client-id";
+
+    @Value("${spring.security.oauth2.client.registration.google.client-id}")
+    private String clientId;
+
+    @Value("${spring.security.oauth2.client.registration.google.client-secret}")
+    private String secret;
+
+    @Value("${spring.security.oauth2.client.registration.google.redirect-uri}")
+    private String redirectUri;
+
+    @PostConstruct
+    public void init(){
+        logger.info("clientId: " + clientId);
+        logger.info("secret: " + secret);
+        logger.info("redirectUri: " + redirectUri);
+    }
 
     /**
      * Constructor for the UserService class.
@@ -123,6 +148,40 @@ public class UserService {
     public UserEntity save(UserEntity user) {
         UserEntity savedUser = userRepository.saveAndFlush(user);
         return savedUser;
+    }
+
+
+    public String exchangeCodeForToken(String code) {
+        logger.info("code: " + code);
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpEntity<MultiValueMap<String, String>> request = getMultiValueMapHttpEntity(code);
+        logger.info("Request: " + request.toString());
+        ResponseEntity<String> response = restTemplate.exchange("https://oauth2.googleapis.com/token", HttpMethod.POST, request, String.class);
+        logger.info("Response: " + response.toString());
+
+        // Parse the response body to extract the access token
+        // This depends on the response format. Here's a basic example if the response is JSON:
+        JSONObject jsonObject = (JSONObject) JSONValue.parse(response.getBody());
+        int expiresInSec = (int) jsonObject.get("expires_in");
+        int expiresInMin = expiresInSec / 60;
+        logger.info("Token expires in: " + expiresInMin + " minutes");
+        return (String) jsonObject.get("access_token");
+    }
+
+    private HttpEntity<MultiValueMap<String, String>> getMultiValueMapHttpEntity(String code){
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("client_id", clientId);
+        map.add("client_secret", secret);
+        map.add("code", code);
+        map.add("redirect_uri", redirectUri);
+        map.add("grant_type", "authorization_code");
+
+        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
+        return request;
     }
 
     /**

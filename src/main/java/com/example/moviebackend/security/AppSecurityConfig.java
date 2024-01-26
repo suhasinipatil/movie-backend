@@ -41,7 +41,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // Disable CSRF (Cross Site Request Forgery)
         http.oauth2Login()
-                .loginPage("/users/login")
                 .successHandler(successHandler)
                 .and().
                 cors().and() // add this line to enable cors
@@ -52,11 +51,12 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/movies/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/movies/**").permitAll()
                 .antMatchers(HttpMethod.DELETE,"/movies/**" ).permitAll()
+                .antMatchers("/api/auth/google").permitAll()
                 .antMatchers("/error").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new JWTAuthenticationFilter(), AnonymousAuthenticationFilter.class)
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
     }
 
     @Bean

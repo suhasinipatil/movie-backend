@@ -25,6 +25,7 @@ public class OAuth2LoginAuthenticationSuccessHandler extends SimpleUrlAuthentica
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException{
+        logger.info("User logged in with OAuth2");
         OAuth2AuthenticationToken token = (OAuth2AuthenticationToken) authentication;
         String name = token.getPrincipal().getAttribute("name");
 
