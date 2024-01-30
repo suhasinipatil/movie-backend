@@ -43,13 +43,6 @@ public class UserService {
     @Value("${spring.security.oauth2.client.registration.google.redirect-uri}")
     private String redirectUri;
 
-    @PostConstruct
-    public void init(){
-        logger.info("clientId: " + clientId);
-        logger.info("secret: " + secret);
-        logger.info("redirectUri: " + redirectUri);
-    }
-
     /**
      * Constructor for the UserService class.
      *
@@ -152,13 +145,13 @@ public class UserService {
 
 
     public String exchangeCodeForToken(String code) {
-        logger.info("code: " + code);
+        //logger.info("code: " + code);
         RestTemplate restTemplate = new RestTemplate();
 
         HttpEntity<MultiValueMap<String, String>> request = getMultiValueMapHttpEntity(code);
-        logger.info("Request: " + request.toString());
+        //logger.info("Request: " + request.toString());
         ResponseEntity<String> response = restTemplate.exchange("https://oauth2.googleapis.com/token", HttpMethod.POST, request, String.class);
-        logger.info("Response: " + response.toString());
+        //logger.info("Response: " + response.toString());
 
         // Parse the response body to extract the access token
         // This depends on the response format. Here's a basic example if the response is JSON:
@@ -182,6 +175,37 @@ public class UserService {
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
         return request;
+    }
+
+    public UserResponseDTO getUserInfoFromGoogle(String accessToken) {
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(accessToken);
+        HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+        ResponseEntity<String> response = restTemplate.exchange("https://www.googleapis.com/oauth2/v3/userinfo", HttpMethod.GET, entity, String.class);
+        String userInfo = response.getBody();
+
+        // Parse the userInfo string to extract user information
+        // This depends on the response format. Here's a basic example if the response is JSON:
+        JSONObject jsonObject = (JSONObject) JSONValue.parse(userInfo);
+        String email = (String) jsonObject.get("email");
+        String name = (String) jsonObject.get("name");
+
+        // Use the email and name to create a new UserEntity or find an existing one
+        UserEntity userEntity = userRepository.findByUsername(name);
+        UserResponseDTO userResponseDTO = new UserResponseDTO();
+        if (userEntity == null) {
+            userEntity = new UserEntity();
+            userEntity.setUsername(name);
+            userRepository.save(userEntity);
+        }
+
+        userEntity = userRepository.findByUsername(name);
+        userResponseDTO.setId(userEntity.getId());
+        userResponseDTO.setUsername(name);
+        userResponseDTO.setToken(jwtService.createJWT(userEntity.getId()));
+
+        return userResponseDTO;
     }
 
     /**

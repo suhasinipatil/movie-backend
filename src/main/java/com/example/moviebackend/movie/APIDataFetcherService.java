@@ -49,8 +49,8 @@ public class APIDataFetcherService {
     }
     @PostConstruct
     public void startFetching() {
-        int fetchInterval = 1; // replace with your fetch interval
-        this.scheduledFuture = this.scheduler.scheduleAtFixedRate(this::fetchData, 0, fetchInterval, TimeUnit.MINUTES);
+        int fetchInterval = 6000; // replace with your fetch interval
+        this.scheduledFuture = this.scheduler.scheduleAtFixedRate(this::fetchData, 6000, fetchInterval, TimeUnit.MINUTES);
     }
 
     private void fetchData() {

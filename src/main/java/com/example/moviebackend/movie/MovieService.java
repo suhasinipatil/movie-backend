@@ -93,9 +93,9 @@ public class MovieService {
             if((!"N/A".equals(genre) && movie.getGenre().contains(genre))
                     || (!"N/A".equals(director) && movie.getDirector().contains(director))
                     || (!"N/A".equals(writer) && movie.getWriter().contains(writer))
-                    || (!"N/A".equals(language) && movie.getLanguage().contains(language))
-                    || (!"N/A".equals(actors) && movie.getActors().contains(actors))
-                    || (imdbRating != -1.0f && movieImdbRating >= lowerBound && movieImdbRating <= upperBound)){
+                    && (!"N/A".equals(language) && movie.getLanguage().contains(language))
+                    && (!"N/A".equals(actors) && movie.getActors().contains(actors))
+                    && (imdbRating != -1.0f && movieImdbRating >= lowerBound && movieImdbRating <= upperBound)){
                 recommendedMovies.add(movie);
             }
         }
@@ -285,11 +285,19 @@ public class MovieService {
             throw new UserService.UserNotFoundException(userId);
         }
 
-        MovieEntity savedMovie = findByImdbID(imdbID);
-        logger.info("Saved movie: " + savedMovie);
+        //check if the movie is already in the user's favourite list
         if(user.getLstMovie() == null){
             user.setLstMovie(new ArrayList<>());
         }
+        List<MovieEntity> lstMovies = user.getLstMovie();
+        for(MovieEntity movie : lstMovies){
+            if(movie.getImdbID().equals(imdbID)){
+                return;
+            }
+        }
+
+        MovieEntity savedMovie = findByImdbID(imdbID);
+        logger.info("Saved movie: " + savedMovie);
         user.getLstMovie().add(savedMovie);
         userService.save(user);
     }

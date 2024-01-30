@@ -39,9 +39,26 @@ public class UserController {
         response.sendRedirect("/oauth2/authorization/google");
     }
 
+    @PostMapping("/users/login/google")
+    public ResponseEntity<?> loginWithGoogle(@RequestBody Map<String, String> body){
+        //System.out.println("body: " + body);
+        String accessToken = body.get("access_token");
+        if(accessToken == null){
+            return ResponseEntity.badRequest().body("Missing access token");
+        }
+
+        try {
+            UserResponseDTO userEntity = userService.getUserInfoFromGoogle(accessToken);
+            // Use the userEntity for further actions...
+            return ResponseEntity.ok().body(userEntity);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error during authentication");
+        }
+    }
+
     @PostMapping("/api/auth/google")
     public ResponseEntity<String> authenticateWithGoogle(@RequestBody Map<String, String> body){
-        System.out.println("body: " + body);
+       // System.out.println("body: " + body);
         String code = body.get("code");
         if(code == null){
             return ResponseEntity.badRequest().body("Missing authorization code");

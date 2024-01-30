@@ -52,6 +52,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/movies/**").permitAll()
                 .antMatchers(HttpMethod.DELETE,"/movies/**" ).permitAll()
                 .antMatchers("/api/auth/google").permitAll()
+                .antMatchers(HttpMethod.POST,"/users/login/google").permitAll()
                 .antMatchers("/error").permitAll()
                 .anyRequest().authenticated()
                 .and()
