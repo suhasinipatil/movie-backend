@@ -28,15 +28,10 @@ public class UserController {
     }
 
     @PostMapping("/users/login")
-    public ResponseEntity<UserResponseDTO> loginUser(@RequestBody UserEntity loginUserDTO)
+    public ResponseEntity<UserResponseDTO> loginUser(@RequestBody UserEntity loginUserDTO) throws UserService.UserNotFoundException
     {
         var savedUser = userService.loginUser(loginUserDTO);
         return ResponseEntity.ok(savedUser);
-    }
-
-    @GetMapping("/users/login/google")
-    public void redirectToGoogleLogin(HttpServletResponse response) throws IOException{
-        response.sendRedirect("/oauth2/authorization/google");
     }
 
     @PostMapping("/users/login/google")
