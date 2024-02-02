@@ -264,7 +264,7 @@ public class MovieService {
      * @param url The URL for the request.
      * @return The HttpGet request.
      */
-    private HttpGet httpGet(String url){
+     HttpGet httpGet(String url){
         return new HttpGet(url);
     }
 

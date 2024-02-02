@@ -7,10 +7,16 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -142,20 +148,39 @@ class UserServiceTest {
     }
 
     @Test
-    void exchangeCodeForToken(){
+    public void testExchangeCodeForToken() {
         // Given
         String code = "testCode";
+        String expectedToken = "testToken";
 
-        String expectedResponse = "testToken";
+        UserService userServiceSpy = Mockito.spy(userService);
 
-        // Mock the behavior of dependencies
-        when(userService.exchangeCodeForToken(code)).thenReturn(expectedResponse);
+        // Mock the HttpEntity returned by getMultiValueMapHttpEntity
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("code", code);
+        map.add("client_id", "testClientId");
+        map.add("client_secret", "testClientSecret");
+        map.add("redirect_uri", "testRedirectUri");
+        map.add("grant_type", "authorization_code");
 
-        // Call the method under test
-        String response = userService.exchangeCodeForToken(code);
+        HttpEntity<MultiValueMap<String, String>> mockHttpEntity = new HttpEntity<>(map, headers);
+        Mockito.doReturn(mockHttpEntity).when(userServiceSpy).getMultiValueMapHttpEntity(code);
+
+        // Mock the ResponseEntity returned by getRestTemplate
+        ResponseEntity<String> mockResponseEntity = Mockito.mock(ResponseEntity.class);
+        when(userServiceSpy.getRestTemplate(mockHttpEntity)).thenReturn(mockResponseEntity);
+
+        // Mock the body of the ResponseEntity
+        String responseBody = "{\"access_token\":\"" + expectedToken + "\",\"expires_in\":3600}";
+        when(mockResponseEntity.getBody()).thenReturn(responseBody);
+
+        // When
+        String actualToken = userService.exchangeCodeForToken(code);
 
         // Then
-        assertEquals(expectedResponse, response);
+        assertEquals(expectedToken, actualToken);
     }
 
     @Test

@@ -19,8 +19,6 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.PostConstruct;
-
 /**
  * This class is responsible for managing users in the application.
  * It provides methods for creating and logging in users, as well as finding users by their username.
@@ -146,11 +144,11 @@ public class UserService {
 
     public String exchangeCodeForToken(String code) {
         //logger.info("code: " + code);
-        RestTemplate restTemplate = new RestTemplate();
+        //RestTemplate restTemplate = new RestTemplate();
 
         HttpEntity<MultiValueMap<String, String>> request = getMultiValueMapHttpEntity(code);
         //logger.info("Request: " + request.toString());
-        ResponseEntity<String> response = restTemplate.exchange("https://oauth2.googleapis.com/token", HttpMethod.POST, request, String.class);
+        ResponseEntity<String> response = getRestTemplate(request);//restTemplate.exchange("https://oauth2.googleapis.com/token", HttpMethod.POST, request, String.class);
         //logger.info("Response: " + response.toString());
 
         // Parse the response body to extract the access token
@@ -162,7 +160,12 @@ public class UserService {
         return (String) jsonObject.get("access_token");
     }
 
-    private HttpEntity<MultiValueMap<String, String>> getMultiValueMapHttpEntity(String code){
+    ResponseEntity<String> getRestTemplate(HttpEntity<MultiValueMap<String, String>> request){
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.exchange("https://oauth2.googleapis.com/token", HttpMethod.POST, request, String.class);
+    }
+
+     HttpEntity<MultiValueMap<String, String>> getMultiValueMapHttpEntity(String code){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");
 
