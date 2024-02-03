@@ -53,7 +53,7 @@ public class APIDataFetcherService {
         this.scheduledFuture = this.scheduler.scheduleAtFixedRate(this::fetchData, 6000, fetchInterval, TimeUnit.MINUTES);
     }
 
-    private void fetchData() {
+     void fetchData() {
         logger.info("Fetching data from API...");
 
         try {

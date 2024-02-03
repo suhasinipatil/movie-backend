@@ -16,10 +16,10 @@ public class JWTService {
 
     // Secret key for JWT signing and verification
     @Value("${jwt.secret}")
-    private String secretKey;
+    String secretKey;
 
     // Algorithm used for JWT signing
-    private Algorithm algorithm;
+    Algorithm algorithm;
 
     /**
      * This method is called after the service is constructed.

@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 
 public class PermutationTracker {
-    private static final String FILE_NAME = "last_permutation.txt";
+    static final String FILE_NAME = "last_permutation.txt";
 
     private static final Logger logger = LoggerFactory.getLogger(PermutationTracker.class);
 
